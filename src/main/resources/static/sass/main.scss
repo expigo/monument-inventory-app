@@ -1,18 +1,16 @@
 
-$color-primary: #006685;
-$color-primary-light: #006685;
-$color-primary-dark: #006685;
 
-*,
-*::after,
-*::before {
-    margin: 0;
-    padding: 0;
-    box-sizing: inherit;
-}
+@import "abstracts/functions";
+@import "abstracts/mixins";
+@import "abstracts/variables";
 
-html {
-    font-size: 62.5%;
-    color: $color-primary;
-    background-color: antiquewhite;
-}
+@import "base/animations";
+@import "base/base";
+@import "base/typography";
+@import "base/utilities";
+
+@import "components/button";
+
+@import "layout/grid";
+@import "layout/header";
+
