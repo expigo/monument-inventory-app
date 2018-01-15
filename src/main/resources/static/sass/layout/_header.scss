@@ -1,0 +1,38 @@
+.header {
+    height: 94vh;
+    // background-image: 
+    background-image: linear-gradient(
+        to right bottom,
+        rgba($color-primary-light, 0.8),
+        rgba($color-secondary-dark, 0.8)        
+    ),
+    url(../img/radiostacja_small.jpg);
+
+    // G:\dissertation\monument-inventory-app\src\main\resources\static\img\radiostacja_min.jpg
+    background-size: cover;
+    background-position: top;
+    // clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+
+    &__logo--box {
+        position: absolute;
+        top: 4rem;
+        left: 4rem;
+    }
+
+    &__logo {
+        /* the other parameter (width:size) will be figured out automatically*/
+        // height: 3.5rem;
+        animation-name: moveInBottom;
+        animation: ease-in;
+        animation-duration: 1s;
+      }
+
+      &__text--box {
+        position: absolute;
+        /* aligned inside parent element!! */
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+      }
+}
