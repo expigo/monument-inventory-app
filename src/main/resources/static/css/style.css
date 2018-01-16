@@ -76,10 +76,44 @@ body {
     margin-bottom: 5rem;
     animation: moveInRight 1s ease-in-out; }
 
+.heading-secondary {
+  font-size: 4rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  background-image: linear-gradient(to right, #0084A9, #010b16);
+  display: inline-block;
+  background-clip: text;
+  color: transparent;
+  letter-spacing: 0.2rem;
+  transition: all .3s; }
+  .heading-secondary:hover {
+    transform: scale(1.1);
+    text-shadow: 0rem 1rem 2rem rgba(0, 0, 0, 0.3); }
+  .heading-secondary__white {
+    color: #fff; }
+    .heading-secondary__white--small {
+      font-size: 5rem; }
+
+.heading-ternary {
+  font-size: 2rem;
+  font-weight: 700;
+  text-transform: uppercase; }
+
+.paragraph {
+  font-size: 1.6rem; }
+  .paragraph:not(:last-child) {
+    margin-bottom: 5rem; }
+
 .u-center-text {
   text-align: center; }
 
-.u-margin-bottom-8 {
+.u-margin-bottom-small {
+  margin-bottom: 1.5rem; }
+
+.u-margin-bottom-medium {
+  margin-bottom: 4rem; }
+
+.u-margin-bottom-large {
   margin-bottom: 8rem; }
 
 .btn:link, .btn:visited {
@@ -128,8 +162,52 @@ body {
   animation: moveInBottom 0.5s ease-out 0.75s;
   animation-fill-mode: backwards; }
 
-.showcase__photo {
-  width: 60%; }
+.showcase {
+  list-style: none;
+  width: 100%;
+  padding: 0; }
+  .showcase li {
+    display: block;
+    float: left;
+    width: 50%;
+    overflow: hidden; }
+  .showcase__photo {
+    width: 100%;
+    opacity: 0.9;
+    transform: scale(1.2);
+    transition: all .5s; }
+    .showcase__photo:hover {
+      opacity: 1;
+      transform: scale(1.05); }
+
+.card {
+  perspective: 150;
+  -moz-perspective: 150rem;
+  position: relative;
+  height: 50rem; }
+  .card__side {
+    font-size: 2rem;
+    height: 50rem;
+    transition: all .7s ease-in;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    backface-visibility: hidden;
+    border-radius: 15px;
+    box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.15); }
+    .card__side--front {
+      background-color: #fff; }
+    .card__side--back {
+      transform: rotateY(180deg); }
+      .card__side--back-1 {
+        background-image: linear-gradient(to right bottom, #ffb900, #ff7730); }
+      .card__side--back-2 {
+        background-image: linear-gradient(to right bottom, #FEDD5D, #5e4b0a); }
+  .card:hover .card__side--front {
+    transform: rotateY(-180deg); }
+  .card:hover .card__side--back {
+    transform: rotateY(0); }
 
 .row {
   max-width: 114rem;
@@ -159,7 +237,7 @@ body {
 
 .header {
   height: 94vh;
-  background-image: linear-gradient(to right bottom, rgba(0, 132, 169, 0.8), rgba(152, 16, 26, 0.8)), url(../img/radiostacja_small.jpg);
+  background-image: linear-gradient(to right bottom, rgba(0, 132, 169, 0.8), rgba(71, 7, 11, 0.8)), url(../img/radiostacja_small.jpg);
   background-size: cover;
   background-position: top; }
   .header__logo--box {
@@ -181,4 +259,9 @@ body {
 
 .section-about {
   background-color: #f7f7f7;
-  padding: 5rem 0 30rem 0; }
+  padding: 10rem 0 25rem 0; }
+
+.section-cards {
+  background-image: linear-gradient(to bottom, rgba(0, 132, 169, 0.8), rgba(0, 0, 0, 0.8)), url(../img/stara_fabryka_drutu.jpg);
+  background-size: cover;
+  padding: 10rem 0 20rem 0; }

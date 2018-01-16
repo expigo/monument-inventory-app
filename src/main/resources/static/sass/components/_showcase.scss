@@ -1,7 +1,27 @@
 .showcase {
 
-    &__photo {
-        width: 60%;
+    list-style: none;
+    width: 100%;
+    padding: 0;
 
+    & li {
+        display: block;
+        float: left;
+        width: 50%;
+        overflow: hidden;
     }
+
+    &__photo {
+        width: 100%;
+        opacity: 0.9;
+        transform: scale(1.2);
+        transition: all .5s;
+
+
+        &:hover {
+            opacity: 1;
+            transform: scale(1.05);
+        }
+    }
+
 }

@@ -1,4 +1,19 @@
 .section-about {
-    background-color: $color-grey-light;
-    padding: 5rem 0 30rem 0;
+  background-color: $color-grey-light;
+  padding: 10rem 0 25rem 0;
 }
+
+.section-cards {
+  background-image: linear-gradient(
+      to bottom,
+      rgba($color-primary-light, 0.8),
+      rgba($color-black, 0.8)
+    ),
+    url(../img/stara_fabryka_drutu.jpg);
+    background-size: cover;
+
+    padding: 10rem 0 20rem 0;
+
+}
+
+
