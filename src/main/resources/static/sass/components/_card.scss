@@ -16,35 +16,165 @@
 
     backface-visibility: hidden;
     border-radius: 15px;
-    box-shadow: 0 2rem 4rem rgba($color-black, 0.15);
+    box-shadow: 1.5rem 2rem 1rem rgba($color-black, 0.15);
 
     &--front {
-      background-color: $color-white;
+      // background-color: $color-white;
+      background: url(../img/stardust.png) repeat;
     }
 
     &--back {
-      transform: rotateY(180deg);
+      transform: rotateY(-180deg);
+      background: url(../img/stardust.png) repeat;
 
-      &-1 {
-        background-image: linear-gradient(
-          to right bottom,
-          $color-secondary-light-2,
-          $color-secondary-dark-2
-        );
-      }
-      &-2 {
-        background-image: linear-gradient(
-          to right bottom,
-          $color-ternary-light,
-          $color-ternary-dark
-        );
-      }
+      // &-1 {
+      //   // background-image: linear-gradient(
+      //   //   to right bottom,
+      //   //   rgba($color-secondary-light, .6),
+      //   //   $color-white
+      //   // );
+      // background: url(../img/stardust.png) repeat;
+        
+      // }
+      // &-2 {
+      //   // background-image: linear-gradient(
+      //   //   to right bottom,
+      //   //   rgba($color-ternary, .6),
+      //   //   $color-white
+      //   // );
+      // background: url(../img/stardust.png) repeat;
+        
+      // }
+
+      // &-3 {
+      //   // background-image: linear-gradient(
+      //   //   to right bottom,
+      //   //   rgba($color-primary, .6),
+      //   //   $color-white
+      //   // );
+      // }
     }
   }
+
+
+
+  /*FRONT SIDE*/
   &:hover &__side--front {
-    transform: rotateY(-180deg);
+    transform: rotateY(180deg);
   }
+
   &:hover &__side--back {
     transform: rotateY(0);
   }
+
+  &__picture {
+    background-size: cover;
+    height: 25rem;
+    background-blend-mode: color-dodge;
+    overflow: hidden;
+    border-radius: 10px;
+    width: 100%;
+    &--1 {
+      background-image: linear-gradient(
+        to right bottom,
+        rgba($color-secondary-light, .5),
+        rgba($color-secondary-dark, .2)
+      ),
+      url(../img/gliwice-ratusz-card.jpg)
+    }
+
+    &--2 {
+      background-image: linear-gradient(
+        to right bottom,
+        rgba($color-ternary-dark, .5),
+        rgba($color-ternary-light, .2)
+      ),
+      url(../img/radiostacja-card.jpg)
+    }
+
+    &--3 {
+      background-blend-mode: color-dodge;      
+        background-image: linear-gradient(
+          to right bottom,
+          rgba($color-primary, .5),
+          rgba($color-grey-light, .2)
+        ),
+        url(../img/willa-caro-card.jpg)
+      }
+
+  }
+
+&__heading {
+  font-size: 3rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  // text-align: right;
+  color: $color-white;
+  position: absolute;
+  top: 22rem;
+  left: 11rem;
+  // width: 75%;
+
+  &--1 {
+    left: 15rem;
+  }
+
+}
+
+&__heading-span {
+  padding: 1rem 1rem;
+
+  &--1 {
+    // color: $color-secondary-dark;
+    background-image: linear-gradient(
+      to right bottom,
+      rgba($color-secondary-light, .5),
+      rgba($color-secondary-dark, .2)
+    ),
+  }
+
+  &--2 {
+    // color: $color-secondary-dark;
+    background-image: linear-gradient(
+      to right bottom,
+      rgba($color-ternary-dark, .5),
+      rgba($color-ternary-light, .2)
+    ),
+  }
+
+  &--3 {
+    // color: $color-secondary-dark;
+    background-image: linear-gradient(
+      to right bottom,
+      rgba($color-primary, .5),
+      rgba($color-primary-light, .2)
+    ),
+  }
+}
+
+&__details {
+  padding: 2.5rem;
+  color: $color-white;
+
+
+  ul {
+    list-style: none;
+    width: 80%;
+    margin: 0 auto;
+
+    li {
+      font-size: 1.6rem;
+      padding: 1rem;
+      text-align: center;
+
+      &:first-child {
+        padding-top: 2.5rem;
+      }
+      &:not(:last-child) {
+        border-bottom: 1px solid $color-white;
+      }
+    }
+  }
+}
+
 }

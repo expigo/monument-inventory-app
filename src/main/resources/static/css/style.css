@@ -80,7 +80,7 @@ body {
   font-size: 4rem;
   text-transform: uppercase;
   font-weight: 700;
-  background-image: linear-gradient(to right, #0084A9, #010b16);
+  background-image: linear-gradient(to right, #0084A9, #134074);
   display: inline-block;
   background-clip: text;
   color: transparent;
@@ -184,7 +184,8 @@ body {
   perspective: 150;
   -moz-perspective: 150rem;
   position: relative;
-  height: 50rem; }
+  height: 50rem;
+  /*FRONT SIDE*/ }
   .card__side {
     font-size: 2rem;
     height: 50rem;
@@ -195,19 +196,63 @@ body {
     width: 100%;
     backface-visibility: hidden;
     border-radius: 15px;
-    box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.15); }
+    box-shadow: 1.5rem 2rem 1rem rgba(0, 0, 0, 0.15); }
     .card__side--front {
-      background-color: #fff; }
+      background: url(../img/stardust.png) repeat; }
     .card__side--back {
-      transform: rotateY(180deg); }
-      .card__side--back-1 {
-        background-image: linear-gradient(to right bottom, #ffb900, #ff7730); }
-      .card__side--back-2 {
-        background-image: linear-gradient(to right bottom, #FEDD5D, #5e4b0a); }
+      transform: rotateY(-180deg);
+      background: url(../img/stardust.png) repeat; }
   .card:hover .card__side--front {
-    transform: rotateY(-180deg); }
+    transform: rotateY(180deg); }
   .card:hover .card__side--back {
     transform: rotateY(0); }
+  .card__picture {
+    background-size: cover;
+    height: 25rem;
+    background-blend-mode: color-dodge;
+    overflow: hidden;
+    border-radius: 10px;
+    width: 100%; }
+    .card__picture--1 {
+      background-image: linear-gradient(to right bottom, rgba(211, 73, 83, 0.5), rgba(75, 20, 24, 0.2)), url(../img/gliwice-ratusz-card.jpg); }
+    .card__picture--2 {
+      background-image: linear-gradient(to right bottom, rgba(190, 160, 24, 0.5), rgba(254, 221, 93, 0.2)), url(../img/radiostacja-card.jpg); }
+    .card__picture--3 {
+      background-blend-mode: color-dodge;
+      background-image: linear-gradient(to right bottom, rgba(19, 64, 116, 0.5), rgba(247, 247, 247, 0.2)), url(../img/willa-caro-card.jpg); }
+  .card__heading {
+    font-size: 3rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #fff;
+    position: absolute;
+    top: 22rem;
+    left: 11rem; }
+    .card__heading--1 {
+      left: 15rem; }
+  .card__heading-span {
+    padding: 1rem 1rem; }
+    .card__heading-span--1 {
+      background-image: linear-gradient(to right bottom, rgba(211, 73, 83, 0.5), rgba(75, 20, 24, 0.2)); }
+    .card__heading-span--2 {
+      background-image: linear-gradient(to right bottom, rgba(190, 160, 24, 0.5), rgba(254, 221, 93, 0.2)); }
+    .card__heading-span--3 {
+      background-image: linear-gradient(to right bottom, rgba(19, 64, 116, 0.5), rgba(0, 132, 169, 0.2)); }
+  .card__details {
+    padding: 2.5rem;
+    color: #fff; }
+    .card__details ul {
+      list-style: none;
+      width: 80%;
+      margin: 0 auto; }
+      .card__details ul li {
+        font-size: 1.6rem;
+        padding: 1rem;
+        text-align: center; }
+        .card__details ul li:first-child {
+          padding-top: 2.5rem; }
+        .card__details ul li:not(:last-child) {
+          border-bottom: 1px solid #fff; }
 
 .row {
   max-width: 114rem;
@@ -237,7 +282,7 @@ body {
 
 .header {
   height: 94vh;
-  background-image: linear-gradient(to right bottom, rgba(0, 132, 169, 0.8), rgba(71, 7, 11, 0.8)), url(../img/radiostacja_small.jpg);
+  background-image: linear-gradient(to right bottom, rgba(0, 132, 169, 0.8), rgba(75, 20, 24, 0.8)), url(../img/radiostacja_small.jpg);
   background-size: cover;
   background-position: top; }
   .header__logo--box {
@@ -262,6 +307,5 @@ body {
   padding: 10rem 0 25rem 0; }
 
 .section-cards {
-  background-image: linear-gradient(to bottom, rgba(0, 132, 169, 0.8), rgba(0, 0, 0, 0.8)), url(../img/stara_fabryka_drutu.jpg);
-  background-size: cover;
+  background: url(../img/old_moon.png) repeat scroll 0% 0%;
   padding: 10rem 0 20rem 0; }
