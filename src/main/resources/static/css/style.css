@@ -80,7 +80,7 @@ body {
   font-size: 4rem;
   text-transform: uppercase;
   font-weight: 700;
-  background-image: linear-gradient(to right, #0084A9, #134074);
+  background-image: linear-gradient(to right, #0084A9, #010b16);
   display: inline-block;
   background-clip: text;
   color: transparent;
@@ -334,12 +334,58 @@ body {
     transform: translate(-50%, -50%);
     text-align: center; }
 
+.footer {
+  background: url(../img/cheap_diagonal_fabric.png) repeat scroll 0% 0%;
+  position: relative;
+  padding: 7rem 0;
+  font-size: 1.6rem;
+  color: #fff;
+  text-align: center;
+  color: #777; }
+  .footer__list {
+    list-style: none;
+    font-size: 1.8rem; }
+  .footer__logo {
+    transform: scale(1.4); }
+  .footer__social-link {
+    font-size: 4rem; }
+  .footer__copyright {
+    padding: 4rem; }
+  .footer__year {
+    color: #333; }
+  .footer__item {
+    display: inline-block; }
+    .footer__item:not(:last-child) {
+      padding-right: 3rem; }
+    .footer__item a:link, .footer__item a:visited {
+      display: inline-block;
+      transition: all 0.2s;
+      color: #fff; }
+    .footer__item a:hover, .footer__item a:active {
+      transform: scale(1.4); }
+
+.ion-social-facebook:hover,
+.ion-social-facebook:active {
+  color: #3B5998; }
+
+.ion-social-pinterest:hover,
+.ion-social-pinterest:active {
+  color: #bd081c; }
+
+.ion-social-twitter:hover,
+.ion-social-twitter:active {
+  color: #1DA1F2; }
+
+.ion-social-instagram:hover,
+.ion-social-instagram:active {
+  color: #262626; }
+
 .section-about {
   background-color: #f7f7f7;
   padding: 10rem 0 25rem 0; }
 
 .section-cards {
-  background: url(../img/old_moon.png) repeat scroll 0% 0%;
+  background: url(../img/cheap_diagonal_fabric.png) repeat scroll 0% 0%;
   padding: 10rem 0 20rem 0; }
 
 .section-search {

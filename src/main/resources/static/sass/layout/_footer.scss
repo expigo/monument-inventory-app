@@ -1,0 +1,117 @@
+.footer {
+    // background-image: linear-gradient(
+    //     to bottom,
+    //     rgba($color-primary-dark, 0.2),
+    //     rgba($color-secondary, 0.5)
+    //     ),
+    //     url(../img/mochaGrunge.png);
+    background: url(../img/cheap_diagonal_fabric.png) repeat scroll 0% 0%;
+    position: relative;
+    padding: 7rem 0;
+    font-size: 1.6rem;
+    color: $color-white;
+    text-align: center;
+    color: $color-grey-dark;
+
+
+    &__list {
+        list-style: none;
+        font-size: 1.8rem;
+    // color: $color-white;
+
+    
+        
+        // li a {
+        //     // transition: all .3s;
+        //     &:link,
+        //     &:visited {
+        //         text-decoration: none;
+        //         border: 0;
+        //         color: #fff;
+        //         -webkit-transition: all .3s;
+        //         transition: all .3s;
+        //     }
+
+        //     &:hover,
+        //     &:active {
+        //         transform: rotate(5deg) scale(1.3);
+        //     }
+
+
+        // }
+    }
+
+    &__logo {
+        transform: scale(1.4);
+        // position: absolute;  
+    }
+
+
+    &__social-link {
+        font-size: 4rem;
+    }
+
+    &__copyright {
+        padding: 4rem;
+    }
+
+    &__year {
+    color: $color-grey-dark-2;
+    // font-size: 2rem;
+    }
+
+    &__item {
+
+        display: inline-block;
+
+        &:not(:last-child) {
+            padding-right: 3rem;
+        }
+
+        
+        a {      
+                &:link,
+                &:visited {
+                display: inline-block;
+                transition: all 0.2s;
+                color: $color-white;
+                
+                }   
+
+                &:hover,
+                &:active {
+                // color: $color-primary;
+                    transform: scale(1.4);
+                    // color: $color-pinterest;
+                    
+                }
+            }
+
+    }
+
+
+
+
+}
+
+
+.ion-social-facebook:hover,
+.ion-social-facebook:active {
+    color: $color-facebook;
+    // transform: rotate(5deg) scale(1.3);
+}
+
+.ion-social-pinterest:hover,
+.ion-social-pinterest:active {
+    color: $color-pinterest;
+}
+
+.ion-social-twitter:hover,
+.ion-social-twitter:active {
+    color: $color-twitter;
+}
+
+.ion-social-instagram:hover,
+.ion-social-instagram:active {
+    color: $color-instagram;
+}
