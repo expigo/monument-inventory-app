@@ -1,0 +1,48 @@
+.form {
+
+    &__group:not(:last-child) {
+        margin-bottom: 2.5rem;
+    }
+
+    &__input {
+        font-family: inherit;
+        color: inherit;
+        font-size: $default-font-size;
+        padding: 1.7rem 2.5rem;
+        border-radius: 3px;
+        background-color: rgba($color-white, .9);
+        border:none;
+        width: 100%;
+        display: block;
+        transition: all .2s;
+
+        &:focus {
+            outline: none;
+            box-shadow: 0 2rem 4rem rgba($color-black, .3);
+        }
+
+
+
+        &::-webkit-input-placeholder { // pseudo-element (in general: they represent the elements that are actually on the page)
+            color: $color-grey-dark;
+        }
+    }
+
+    &__label {
+        font-size: 1.3rem;
+        font-weight: 300;
+        margin-top: .7p;
+        margin-left: 2.7rem;
+        color: $color-white;
+        transition: all .4s;
+    }
+
+    &__input:placeholder-shown + &__label {
+
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-4.5rem);
+    }
+
+
+}

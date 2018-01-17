@@ -12,24 +12,43 @@
   //   url(../img/stara_fabryka_drutu.jpg);
   // background: url(../img/dust_scratches.png) repeat;
 
-//========================================================
-//  This pattern is downloaded from www.subtlepatterns.com 
-//  If you need more, that's where to get'em.
-//  ========================================================
+  //========================================================
+  //  This pattern is downloaded from www.subtlepatterns.com
+  //  If you need more, that's where to get'em.
+  //  ========================================================
   // background: url(../img/cheap_diagonal_fabric.png) repeat scroll 0% 0%;
   // background: url(../img/stardust.png) repeat scroll 0% 0%;
   // background: url(../img/old_map.png) repeat scroll 0% 0%;
   // background: url(../img/tweed.png) repeat scroll 0% 0%;
   background: url(../img/old_moon.png) repeat scroll 0% 0%;
-  
-  
 
-  
+  // background-size: cover;
 
-    // background-size: cover;
-
-    padding: 10rem 0 20rem 0;
-
+  padding: 10rem 0 20rem 0;
 }
 
+.section-search {
+  padding: 15rem 0;
+  background-color: $color-grey-light;
+}
 
+.search {
+  background-image: linear-gradient(
+      90deg,
+      rgba($color-primary, 0.9) 0%,
+      rgba($color-primary, 0.9) 50%,
+      transparent 50%
+    ),
+    url(../img/rynek.jpg);
+
+  background-size: cover;
+  border-radius: 3px;
+  box-shadow: 0 1.5rem 4rem rgba($color-black, 0.5);
+
+  height: 50rem;
+
+  &__form {
+    width: 50%;
+    padding: 6rem;
+  }
+}

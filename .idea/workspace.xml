@@ -3,13 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="6399f6e8-e627-494b-9e85-55d20edc5d43" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/css/style.css" afterPath="$PROJECT_DIR$/src/main/resources/static/css/style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/sass/abstracts/_variables.scss" afterPath="$PROJECT_DIR$/src/main/resources/static/sass/abstracts/_variables.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/sass/base/_typography.scss" afterPath="$PROJECT_DIR$/src/main/resources/static/sass/base/_typography.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/sass/base/_utilities.scss" afterPath="$PROJECT_DIR$/src/main/resources/static/sass/base/_utilities.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/sass/components/_showcase.scss" afterPath="$PROJECT_DIR$/src/main/resources/static/sass/components/_showcase.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/sass/main.scss" afterPath="$PROJECT_DIR$/src/main/resources/static/sass/main.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/sass/pages/_home.scss" afterPath="$PROJECT_DIR$/src/main/resources/static/sass/pages/_home.scss" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/templates/index.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/index.html" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
@@ -24,7 +17,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="front/index-page" />
+        <entry key="$PROJECT_DIR$" value="front/showcase-tryout" />
       </map>
     </option>
   </component>
@@ -284,12 +277,12 @@
       <workItem from="1515941402908" duration="455000" />
       <workItem from="1515941992797" duration="6068000" />
       <workItem from="1516012438115" duration="1924000" />
-      <workItem from="1516103298464" duration="49000" />
+      <workItem from="1516103298464" duration="1317000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="9905000" />
+    <option name="totallyTimeSpent" value="11173000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
