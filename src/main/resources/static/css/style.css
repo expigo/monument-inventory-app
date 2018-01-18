@@ -1,3 +1,9 @@
+@keyframes underline-gradient {
+  0% {
+    transform: translate3d(0%, 0%, 0); }
+  100% {
+    transform: translate3d(-75%, 0%, 0); } }
+
 @keyframes moveInLeft {
   0% {
     /*add the beginning of animation, the object is invisibe*/
@@ -379,6 +385,86 @@ body {
 .ion-social-instagram:hover,
 .ion-social-instagram:active {
   color: #262626; }
+
+.navigation__checkbox {
+  display: none; }
+
+.navigation__checkbox:checked + .navigation__label {
+  transform: rotate(-45deg); }
+
+.navigation__checkbox:checked ~ .navigation__background {
+  transform: scale(100);
+  width: 100%; }
+
+.navigation__checkbox:checked ~ .navigation__nav {
+  opacity: 1;
+  width: 100%; }
+
+.navigation__hamburger {
+  position: relative;
+  margin-top: 3.5rem; }
+  .navigation__hamburger, .navigation__hamburger::before, .navigation__hamburger::after {
+    width: 3rem;
+    height: 2px;
+    background-color: #777;
+    display: inline-block; }
+  .navigation__hamburger::before, .navigation__hamburger::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    transition: all .2s; }
+  .navigation__hamburger::before {
+    top: -.8rem; }
+  .navigation__hamburger::after {
+    top: .8rem; }
+
+.navigation__label {
+  width: 6rem;
+  height: 6rem;
+  position: fixed;
+  top: 5rem;
+  right: 5rem;
+  background-color: #fff;
+  border-radius: 3px;
+  cursor: pointer;
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.2);
+  transition: all .4s;
+  z-index: 2222; }
+  .navigation__label:hover {
+    background-color: #134074; }
+
+.navigation__background {
+  width: 5rem;
+  height: 5rem;
+  position: fixed;
+  top: 5.5rem;
+  right: 5.5rem;
+  border-radius: 3px;
+  cursor: pointer;
+  background-image: radial-gradient(#FEDD5D, #bea018);
+  z-index: 1111;
+  transition: transform 0.8s cubic-bezier(0.165, 0.84, 0.44, 1); }
+
+.navigation__nav {
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1555;
+  opacity: 0;
+  width: 0%; }
+
+.navigation__list {
+  list-style: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center; }
+
+.navigation__link {
+  font-size: 2rem; }
 
 .section-about {
   background-color: #f7f7f7;
