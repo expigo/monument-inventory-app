@@ -1,0 +1,47 @@
+/*
+>>> BREAKPOINT MANAGER
+Structure: Desktop-first (max-width)
+Syntax: SCSS
+Grid: Custom
+Created by: Kryspin Musiol
+
+-------------------------------------
+established breakpoints:
+
+range:                  purpose:                paramter name:
+------                  --------                -------------
+0       -   600px       phone only              small
+601px   -   1200px      tablet portrait         medium
+1201px  -   1800px      tablet landscape        large
+1800px+                 big desktop             extra-large
+
+// assuming 1em=16px
+*/
+
+///@access public
+///@param {String} $breakpoint - Breakpoint
+@mixin breakpoint($breakpoint) {
+    @if $breakpoint == small {              //600px
+        @media (max-width: 37.5em) {
+            @content;
+        }
+    }
+
+    @else if $breakpoint == medium {              //1200px
+        @media (max-width: 56.25em) {
+            @content;
+        }
+    }
+
+    @else if $breakpoint == large {              //1800px
+        @media (max-width: 75em) {
+            @content;
+        }
+    }
+
+    @else if $breakpoint == extra-large {              //>1800px
+        @media (min-width: 112.5em) {
+            @content;
+        }
+    }
+}

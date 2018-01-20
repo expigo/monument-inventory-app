@@ -24,7 +24,7 @@
     }
 
     &--back {
-      transform: rotateY(-180deg);
+      transform: rotateY(180deg);
       background: url(../img/stardust.png) repeat;
       // background: url(../img/old_map.png) repeat;
       
@@ -62,7 +62,7 @@
 
   /*FRONT SIDE*/
   &:hover &__side--front {
-    transform: rotateY(180deg);
+    transform: rotateY(-180deg);
   }
 
   &:hover &__side--back {
@@ -177,6 +177,23 @@
       }
     }
   }
+}
+
+// BACK SIDE
+
+&__cta {
+
+  @include center-element-inside-container;
+  width: 90%;
+  text-align: center;
+  
+}
+
+&__more-info {
+  font-size: 2.5rem;
+  font-weight: 300;
+  color: $color-white;
+  display: block;
 }
 
 }

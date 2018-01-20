@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="pl" xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <meta charset="UTF-8">
@@ -13,6 +13,10 @@
     <link rel="stylesheet" href="../static/css/icon-font.css">
     <link rel="stylesheet" type="text/css" href="../static/css/ionicons.min.css">
 
+    <!-- <script src="http://maps.google.com/maps/api/js"></script>  -->
+    <script src="../static/js/gmaps.js"></script>
+    
+    <script src="../static/js/script.js"></script>
 
 
 
@@ -25,7 +29,9 @@
 
     <div class="navigation">
         <input type="checkbox" class="navigation__checkbox" id="toggle_navi">
-        <label for="toggle_navi" class="navigation__label"><span class="navigation__hamburger">&nbsp;</span></label>
+        <label for="toggle_navi" class="navigation__label">
+            <span class="navigation__hamburger">&nbsp;</span>
+        </label>
 
         <div class="navigation__background">
             &nbsp;
@@ -33,10 +39,20 @@
 
         <nav class="navigation__nav">
             <ul class="navigation__list">
-                <li class="navigation__item"><a href="#" class="navigation__link">Zaloguj się</a></li>
-                <li class="navigation__item"><a href="#" class="navigation__link">Informacja</a></li>
-                <li class="navigation__item"><a href="#" class="navigation__link">Przejrzyj karty</a></li>
-                <li class="navigation__item"><a href="#" class="navigation__link">Wyszukaj zabytek</a></li>
+                <li class="navigation__item">
+                    <a href="#" class="navigation__link">
+                        <span>Zaloguj się</span>
+                    </a>
+                </li>
+                <li class="navigation__item">
+                    <a href="#" class="navigation__link">Informacja</a>
+                </li>
+                <li class="navigation__item">
+                    <a href="#" class="navigation__link">Przejrzyj karty</a>
+                </li>
+                <li class="navigation__item">
+                    <a href="#" class="navigation__link">Wyszukaj zabytek</a>
+                </li>
             </ul>
         </nav>
     </div>
@@ -129,7 +145,14 @@
                                 </ul>
                             </div>
                         </div>
-                        <div class="card__side card__side--back card__side--back-1">BACK</div>
+                        <div class="card__side card__side--back card__side--back-1">
+                            <div class="card__cta">
+                                <div class="card__more-info u-margin-bottom-large">
+                                    Więcej informacji
+                                </div>
+                                <a href="#popup--1" class="btn btn--white">Klik!</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -154,7 +177,14 @@
                             </div>
                         </div>
 
-                        <div class="card__side card__side--back card__side--back-2">BACK</div>
+                        <div class="card__side card__side--back card__side--back-2">
+                            <div class="card__cta">
+                                <div class="card__more-info u-margin-bottom-large">
+                                    Więcej informacji
+                                </div>
+                                <a href="#popup--2" class="btn btn--white">Klik!</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="col-1-of-3">
@@ -177,7 +207,14 @@
                                     </ul>
                                 </div>
                             </div>
-                            <div class="card__side card__side--back card__side--back-3">BACK</div>
+                            <div class="card__side card__side--back card__side--back-3">
+                                <div class="card__cta">
+                                    <div class="card__more-info u-margin-bottom-large">
+                                        Więcej informacji
+                                    </div>
+                                    <a href="#popup--3" class="btn btn--white">Klik!</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -192,7 +229,7 @@
                         <form action="#" class="form">
                             <div class=" u-margin-bottom-medium">
                                 <h2 class="heading-secondary heading-secondary__white heading-secondary__white--small">
-                                    Szukaj zabytku
+                                    Wyszukaj zabytek
                                 </h2>
                             </div>
 
@@ -215,23 +252,125 @@
             </div>
         </section>
 
-        <footer class="footer">
-            <div class="row">
-                <div class="col-1-of-3"><p class="footer__copyright">&copy;<span class="footer__year">2018</span>Kryspin Musiol</p></div>
-                <div class="col-1-of-3"><img src="../static/img/logo.png" alt="Logo" class="footer__logo"></div>
-                <div class="col-1-of-3">
-                    <ul class="footer__list">
-                        <li class="footer__item"><a href="#" class="footer__social-link footer__social-link--fb"><i class="ion-social-facebook"></i></a></li>
-                        <li class="footer__item"><a href="#" class="footer__social-link footer__social-link--pinterest"><i class="ion-social-pinterest"></i></a></li>
-                        <li class="footer__item"><a href="#" class="footer__social-link footer__social-link--twitter"><i class="ion-social-twitter"></i></a></li>
-                        <li class="footer__item"><a href="#" class="footer__social-link footer__social-link--instagram"><i class="ion-social-instagram"></i></a></li>
-                    </ul>
+    </main>
+    <footer class="footer">
+                <div class="row">
+                    <div class="col-1-of-3">
+                        <p class="footer__copyright">&copy;
+                            <span class="footer__year">2018</span>Kryspin Musiol</p>
+                    </div>
+                    <div class="col-1-of-3">
+                        <img src="../static/img/logo.png" alt="Logo" class="footer__logo">
+                    </div>
+                    <div class="col-1-of-3">
+                        <ul class="footer__list">
+                            <li class="footer__item">
+                                <a href="#" class="footer__social-link footer__social-link--fb">
+                                    <i class="ion-social-facebook"></i>
+                                </a>
+                            </li>
+                            <li class="footer__item">
+                                <a href="#" class="footer__social-link footer__social-link--pinterest">
+                                    <i class="ion-social-pinterest"></i>
+                                </a>
+                            </li>
+                            <li class="footer__item">
+                                <a href="#" class="footer__social-link footer__social-link--twitter">
+                                    <i class="ion-social-twitter"></i>
+                                </a>
+                            </li>
+                            <li class="footer__item">
+                                <a href="#" class="footer__social-link footer__social-link--instagram">
+                                    <i class="ion-social-instagram"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+    </footer>
+
+    <div class="popup" id="popup--1">
+        <div class="popup__content">
+            <div class="popup__head ">
+                <a href="#section-cards" class="popup__close">&times;</a>
+                <h2 class="heading-secondary">Ratusz Miejski</h2>
+            </div>
+            <div class="popup__table">
+            <div class="popup__left">
+                <h3 class="heading-ternary u-margin-bottom-medium">Znajduje się na środku rynku w centrum Gliwic</h3>
+                <p class="popup__description">
+                        <!-- Reprezentacyjny obiekt, w którym odbywają się m.in. sesje Rady Miasta, istotne wydarzenia kulturalne oraz uroczystości ślubne. Budowę pierwszego gliwickiego Ratusza datuje się na przełom XIII i XIV wieku. Wówczas był to obiekt drewniany. Wraz z rozszerzeniem praw miejskich, najwcześniej w XIV wieku, Ratusz przebudowano i drewnianą konstrukcję zastąpiono murowaną, ale z powodu braku źródeł nie można powiedzieć na ten temat nic więcej. W XV wieku Ratusz miał kształt dwukondygnacyjnej, kwadratowej bryły. Przez lata, wraz z kolejnymi modernizacjami zmieniał formę. Niestety, do naszych czasów nie zachował się żaden dokument ikonograficzny ani szczegółowy opis, na podstawie którego można dokładnie przedstawić wygląd ówczesnego Ratusza. Jak potwierdziły wykopaliska, w XVI wieku posiadał inną wieżę. Najprawdopodobniej została dobudowana do Ratusza po wielkim pożarze w 1601 r. – jej pozostałości znajdują się pod płytą Rynku. Ratusz płonął jeszcze trzy razy – w 1711, 1813 i 1820 roku. W obawie przed zawaleniem, w 1784 r. rozebrano górną część murowanej wieży ratuszowej. W późniejszych latach była ona przebudowywana – w latach 1784-1789 mistrz murarski Fritsch, działając pod okiem inspektora budowlanego Franza Ilgnera, podwyższył wieżę, natomiast w 1842 r. królewski radca budowlany Uhlig gruntownie ją przebudował według własnej koncepcji (ku konsternacji magistratu i rady miejskiej oraz autorów szkicu przebudowy mistrza murarskiego Heintze’a i mistrza ciesielskiego Mayera). -->
+                        Pierwszy ratusz w Gliwicach wybudowano już pod koniec XIII wieku jednak obecny budynek ratusza został wybudowany w XV wieku. Jego wysokość wynosi 41,5 metra.
+
+                        W piwnicach budynku znajdują się pozostałości murów pierwszego ratusza.
+
+                        Obecnie w budynku znajduje się Pałac Ślubów oraz sale reprezentacyjne, a w piwnicach kawiarnia. Obiekt wpisano do rejestru zabytków 7 marca 1960 (nr rej.: 319/60)
+                </p>
+            </div>
+            <div class="popup__right">
+                <img src="../static/img/gliwice-ratusz-card.jpg" alt="Ratusz" class="popup__image">
+                <!-- <img src="/static/img/ratusz.jpg" alt="Ratusz" class="popup__image"> -->
+                <div class="popup__map" id="map--town-hall">
                 </div>
             </div>
-        </footer>
-    </main>
+        </div>
+    </div>
+    </div>
 
-    <!-- 
+    <div class="popup" id="popup--2">
+        <div class="popup__content">
+            <div class="popup__head ">
+                <a href="#section-cards" class="popup__close">&times;</a>
+                <h2 class="heading-secondary">Radiostacja</h2>
+            </div>
+            <div class="popup__table">
+            <div class="popup__left">
+                <h3 class="heading-ternary u-margin-bottom-medium">Najwyższa w Europie drewniana konstrukcja</h3>
+                <p class="popup__description">
+                        Zabytkowa wieża antenowa, będąca dziś najwyższą drewnianą budowlą w Europie wciąż jednak, choć w innym nieco charakterze, służy celom komunikacyjnym, dźwigając kilkadziesiąt różnego rodzaju anten, co zresztą w żadnym stopniu nie umniejsza jej turystycznych walorów. Wejście na szczytową platformę zarezerwowane jest co prawda dla ekip technicznych, jednak zaprojektowana z myślą o mieszkańcach i turystach przestrzeń wokół wieży ściąga letnią porą miłośników spacerów oraz tych, którzy po trudach przemierzania Szlaku Zabytków Techniki chcą nieco odetchnąć. Wieża stała się częścią krajobrazu miasta. Widoczna jest z wielu miejsc nie tylko w Gliwicach, zwłaszcza o zmroku, kiedy rozświetlają ją potężne reflektory.
+                </p>
+            </div>
+            <div class="popup__right">
+                <img src="../static/img/radiostacja_min.jpg" alt="Ratusz" class="popup__image">
+                <!-- <img src="/static/img/ratusz.jpg" alt="Ratusz" class="popup__image"> -->
+                <div class="popup__map" id="map--radio-station">
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <div class="popup" id="popup--3">
+        <div class="popup__content">
+            <div class="popup__head ">
+                <a href="#section-cards" class="popup__close">&times;</a>
+                <h2 class="heading-secondary">Willa Caro</h2>
+            </div>
+            <div class="popup__table">
+            <div class="popup__left">
+                <h3 class="heading-ternary u-margin-bottom-medium">Neorenesansowa perła kultury</h3>
+                <p class="popup__description">
+                        Jest przykładem doskonale zachowanej XIX-wiecznej rezydencji w stylu renesansowej architektury willowej. Niegdyś należała do gliwickiego przemysłowca Oscara Caro, a w 1934 roku została przekazana przez miasto na stałą siedzibę Muzeum. Wybudowana w latach 1882-1885 jednopiętrowa rezydencja (drugie piętro dobudowano w latach 20. XX wieku), posiadała rozległy, eklektyczny ogród. Obecnie willę i ogród otacza wiernie zrekonstruowane kamienno-metalowe ogrodzenie. We wnętrzach pozostał dobrze zachowany wystrój: bogato zdobione stropy, boazerie, parkiety, stolarka drzwiowa i okienna.
+
+                        Aktualnie w willi prezentowana jest wystawa stała dziewiętnastowiecznych wnętrz mieszkalnych górnośląskich przemysłowców. Ponadto mają tu miejsce liczne wystawy czasowe, koncerty, spotkania, konferencje i warsztaty towarzyszące wystawom.
+                </p>
+            </div>
+            <div class="popup__right">
+                <img src="/static/img/willa_caro-card.jpg" alt="Ratusz" class="popup__image">
+                <!-- <img src="/static/img/ratusz.jpg" alt="Ratusz" class="popup__image"> -->
+                <div class="popup__map" id="map--willa-caro">
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB3Kvmn-YZP1MZhw3Eb1cSnv7bGDz_g8GQ&callback=initMap">
+    </script>
+    
+    
+        <!-- 
     <section class="grid-test">
         <div class="row">
             <div class="col-1-of-2">

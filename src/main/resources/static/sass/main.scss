@@ -3,6 +3,7 @@
 @import "abstracts/functions";
 @import "abstracts/mixins";
 @import "abstracts/variables";
+@import "abstracts/_mediaqueries.scss";
 
 @import "base/animations";
 @import "base/base";
@@ -13,6 +14,8 @@
 @import "components/showcase";
 @import "components/card";
 @import "components/form";
+@import "components/popup";
+
 
 
 @import "layout/grid";

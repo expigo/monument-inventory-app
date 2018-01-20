@@ -1,0 +1,138 @@
+.popup {
+
+    opacity: 0;
+    visibility: hidden;
+
+    position: fixed;
+    top: 0%;
+    left: 0%;
+
+    height: 100vh;
+    width: 100%;
+
+    background-color:rgba($color-black , $alpha: .8);
+    // position: relative;
+
+    z-index: 3333;
+
+    transition: all .3s;
+
+
+    &__content {
+
+        @include center-element-inside-container;
+
+        width: 75%;
+        box-shadow: 0 2rem 4rem rgba($color-black , $alpha: .2);
+        background-color: $color-grey-light;
+        // background: url(../img/cheap_diagonal_fabric.png) repeat scroll 0% 0%;
+
+        border-radius: 5px;
+
+    }
+
+    &__head {
+        text-align: center;
+        border-bottom: 1px solid $color-grey-dark;
+        width: 75%;        
+        // margin-bottom: 4rem;
+        margin: 0 auto;
+    }
+
+    &__table {
+        display: table;
+        
+    }
+
+    &__left {
+        // width: calc((100% / 3)*2);
+        width: 66.66666667%;                
+
+        // float: left;
+
+        display: table-cell;
+        vertical-align: middle;
+        padding: 2rem 5rem;
+        letter-spacing: .1rem;
+        // line-height: 2rem;
+    }
+
+    &__description {
+        font-size: $default-font-size;
+        font-weight: 300;
+        color: $color-grey-dark;
+
+        margin-bottom: 4rem;
+
+        column-count: 2;
+        column-gap: 4rem;
+        column-rule: 1px solid $color-grey-light;
+
+        -moz-hyphens: auto; // requires lang attr. of the page to be set
+        -ms-hyphens: auto; // requires lang attr. of the page to be set
+        -webkit-hyphens: auto; // requires lang attr. of the page to be set
+        hyphens: auto; // requires lang attr. of the page to be set
+    }
+
+    &__right {
+        display:block;
+        display: table-cell;
+        
+        // width: calc((100% / 3));
+        width: 33.3333333%;        
+    }
+
+    
+    
+    
+    &__image {
+        display: block;
+        width: 95%;
+        margin: 1rem;
+    }
+
+
+
+    &__map {
+        display: block;
+        width: 95%;
+        margin: 1rem;
+        height: 250px  
+    }
+
+    // opening
+    &:target {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    &:target &__content {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);     
+    }
+
+    // closing
+    &__close {
+        &:link,
+        &:visited {
+            color: $color-primary;
+            position: absolute;
+            // top: 1.5rem;
+            right: 2.5rem;
+            font-size: 3.5rem;
+            text-decoration: none;
+            transition: all .3s;
+            display: inline-block;
+        }
+
+        &:hover {
+            transform: scale(1.2);
+        }
+    }
+}
+
+
+#map--town-hall {
+    // height: 100%;
+    // background-color: #000;
+}

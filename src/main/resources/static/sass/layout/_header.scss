@@ -9,8 +9,9 @@
     url(../img/radiostacja_small.jpg);
 
     // G:\dissertation\monument-inventory-app\src\main\resources\static\img\radiostacja_min.jpg
-    background-size: cover;
-    background-position: top;
+    background-size: cover; //unset
+    background-position: auto; //top
+    // background-position: 100% 100%; //top
     // clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
 
 
