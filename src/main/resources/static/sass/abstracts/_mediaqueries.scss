@@ -10,10 +10,11 @@ established breakpoints:
 
 range:                  purpose:                paramter name:
 ------                  --------                -------------
-0       -   600px       phone only              small
-601px   -   1200px      tablet portrait         medium
-1201px  -   1800px      tablet landscape        large
-1800px+                 big desktop             extra-large
+0       -   600px       phone only                  small
+601px   -   900px       tablet portrait             medium
+901px   -   1200px      [normal mode -> desktop-first approach]
+1201px  -   1801px      tablet landscape            large
+1800px+                 big desktop                 extra-large
 
 // assuming 1em=16px
 */

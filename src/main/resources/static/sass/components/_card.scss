@@ -76,6 +76,7 @@
     overflow: hidden;
     border-radius: 10px;
     width: 100%;
+    // transform: scale(1.3);
     &--1 {
       background-image: linear-gradient(
         to right bottom,
@@ -103,6 +104,7 @@
         ),
         url(../img/willa-caro-card.jpg)
       }
+
 
   }
 
@@ -195,5 +197,118 @@
   color: $color-white;
   display: block;
 }
+
+
+
+
+
+
+@include breakpoint(large) {
+
+&__heading {
+  font-size: 3rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  // text-align: right;
+  color: $color-white;
+  position: absolute;
+  top: 22rem;
+  left: 0;
+  // width: 75%;
+
+  &--1 {
+    // left: 15rem;
+  }
+
+}
+
+&__heading-span {
+  // padding: 1rem 1rem;
+
+  &--1 {
+    // color: $color-secondary-dark;
+    background-image: linear-gradient(
+      to right bottom,
+      rgba($color-secondary-light, .5),
+      rgba($color-secondary-dark, .2)
+    ),
+  }
+
+  &--2 {
+    // color: $color-secondary-dark;
+    background-image: linear-gradient(
+      to right bottom,
+      rgba($color-ternary-dark, .5),
+      rgba($color-ternary-light, .2)
+    ),
+  }
+
+  &--3 {
+    // color: $color-secondary-dark;
+    background-image: linear-gradient(
+      to right bottom,
+      rgba($color-primary, .5),
+      rgba($color-primary-light, .2)
+    ),
+  }
+}
+
+&__details {
+  padding: 2.5rem;
+  color: $color-white;
+
+
+  ul {
+    list-style: none;
+    width: 80%;
+    margin: 0 auto;
+
+    li {
+      font-size: $default-font-size;
+      padding: 1rem;
+      text-align: center;
+
+      &:first-child {
+        padding-top: 2.5rem;
+      }
+      &:not(:last-child) {
+        border-bottom: 1px solid $color-white;
+      }
+    }
+  }
+}
+
+}
+
+@include breakpoint(medium) {
+
+
+  &__details {
+    padding: 2.5rem;
+    color: $color-white;
+  
+  
+    ul {
+      list-style: none;
+      width: 80%;
+      margin: 0 auto;
+  
+      li {
+        font-size: 2rem;
+        padding: 1rem;
+        text-align: center;
+  
+        &:first-child {
+          padding-top: 2.5rem;
+        }
+        &:not(:last-child) {
+          border-bottom: 1px solid $color-white;
+        }
+      }
+    }
+  }
+  
+  }
+  
 
 }

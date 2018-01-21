@@ -2,23 +2,51 @@
 
 .row {
   max-width: $grid-width; // standard adopted
-//   background-color: #eee;
+
+    @include breakpoint(medium) {
+      max-width: 50rem;
+      padding: 0 2rem;
+    }
+
   margin: 0 auto;
 
   //&not(X) -> the negation pseudo-class
   &:not(:last-child) {
     margin-bottom: $gutter-vertical;
+
+    @include breakpoint(medium) {
+      margin-bottom: $gutter-vertical-medium;
+    }
   }
+
+
 
   @include clearfix;
 
+  
   // attribute selector (i.e src, alt ...)
   [class ^= "col-"] {
     // background-color: #BA2632;
     float: left;
+
     &:not(:last-child) {
       margin-right: $gutter-horizontal;
+
+      @include breakpoint(large) {
+      margin-right: 6rem; 
     }
+
+      @include breakpoint(medium) {
+        width: 100%;
+        padding-bottom: 5rem;
+    }
+
+    }
+
+        @include breakpoint(medium) {
+          width: 100% !important;
+      }
+
   }
 
   .col-1-of-2 {
