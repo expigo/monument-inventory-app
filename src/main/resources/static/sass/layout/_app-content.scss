@@ -1,0 +1,19 @@
+.app-content {
+    display: flex;
+    // flex: 1;
+    
+//     @media only screen
+//     and (max-width: 37.5em)
+//     and (orientation: landscape) {
+//         flex-direction: row;
+//         color: $color-ternary-dark;
+//    }
+
+    @include breakpoint(small) {
+        min-height: 0;
+        height: 100%;
+        margin: 0;
+        // display:flex;
+        flex-direction:column;
+    }
+}

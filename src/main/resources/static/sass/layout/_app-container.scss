@@ -1,0 +1,40 @@
+.app-container {
+    max-width: 114rem;
+    background-color: $color-grey-light;
+    position: relative;
+    margin: 6rem auto;
+    min-height: 70vh;
+    // box-shadow: 0 1.5rem 5rem rgba(0, 0, 0, .3);
+    box-shadow: 0 1.5rem 3rem rgba($color-white, .3);
+    // justify-content: flex-end;
+
+    // & > * {
+    //     flex: auto;
+    // }
+
+    @include breakpoint(medium) {
+        font-size: 75%;
+        margin: 0;
+        width: 100%;
+        min-height: 0;
+        height: 100%;
+        // max-width: 100%;
+        // display:flex;
+        // flex-direction:column;
+    }
+
+//     @media only screen
+//     and (max-width: 37.5em)
+//     and (orientation: landscape) {
+//        color: $color-ternary-dark;
+//        flex-direction: row;
+//    }
+
+    // @include breakpoint(small) {
+    //     // min-height: 0;
+    //     margin: 0;
+    //     display:flex;
+    //     flex-direction:column;
+    // }
+
+}

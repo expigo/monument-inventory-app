@@ -19,14 +19,15 @@
     box-shadow: 1.5rem 2rem 1rem rgba($color-black, 0.15);
 
     &--front {
-      // background-color: $color-white;
-      background: url(../img/stardust.png) repeat;
+      // background: url(../img/stardust.png) repeat;
+      background: url(../img/old_map.png) repeat;
+      
     }
 
     &--back {
       transform: rotateY(180deg);
-      background: url(../img/stardust.png) repeat;
-      // background: url(../img/old_map.png) repeat;
+      // background: url(../img/stardust.png) repeat;
+      background: url(../img/old_map.png) repeat;
       
 
       // &-1 {
@@ -83,7 +84,17 @@
         rgba($color-secondary-light, .5),
         rgba($color-secondary-dark, .2)
       ),
-      url(../img/gliwice-ratusz-card.jpg)
+      url(../img/gliwice-ratusz-card.jpg);
+
+      @media (min-resolution: 192dpi) and (min-width: 37.5rem),   // retina display (2xDPI) && screens of size>600px
+      (min-width: 125) {                                          // OR screens of width bigger than width of the image
+          background-image: linear-gradient(
+              to right bottom,
+              rgba($color-primary-light, 0.8),
+              rgba($color-secondary-dark, 0.8)        
+          ),
+          url(../img/gliwice-ratusz-card-large.jpg);
+      }
     }
 
     &--2 {
@@ -92,7 +103,8 @@
         rgba($color-ternary-dark, .5),
         rgba($color-ternary-light, .2)
       ),
-      url(../img/radiostacja-card.jpg)
+      url(../img/radiostacja-card.jpg);
+
     }
 
     &--3 {
@@ -102,7 +114,17 @@
           rgba($color-primary, .5),
           rgba($color-grey-light, .2)
         ),
-        url(../img/willa-caro-card.jpg)
+        url(../img/willa-caro-card.jpg);
+
+        @media (min-resolution: 192dpi) and (min-width: 37.5rem),   // retina display (2xDPI) && screens of size>600px
+        (min-width: 125) {                                          // OR screens of width bigger than width of the image
+            background-image: linear-gradient(
+                to right bottom,
+                rgba($color-primary-light, 0.8),
+                rgba($color-secondary-dark, 0.8)        
+            ),
+            url(../img/willa-caro-card-large.jpg);
+        }
       }
 
 
@@ -158,7 +180,7 @@
 
 &__details {
   padding: 2.5rem;
-  color: $color-white;
+  color: $color-secondary-dark;
 
 
   ul {
@@ -203,7 +225,9 @@
 
 
 
-@include breakpoint(large) {
+// @include breakpoint(large) {
+  @media only screen and (max-width: 56.25em),
+          only screen and (hover:none) {              // or when there is no posibility to hover <opposite: hover: hover)
 
 &__heading {
   font-size: 3rem;
@@ -215,11 +239,6 @@
   top: 22rem;
   left: 0;
   // width: 75%;
-
-  &--1 {
-    // left: 15rem;
-  }
-
 }
 
 &__heading-span {

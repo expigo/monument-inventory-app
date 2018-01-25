@@ -5,6 +5,9 @@
     transform: translate3d(-75%, 0%, 0); } }
 
 /*
+ WEBAPP SPECIFIC VARIABLES
+*/
+/*
 >>> BREAKPOINT MANAGER
 Structure: Desktop-first (max-width)
 Syntax: SCSS
@@ -71,16 +74,16 @@ range:                  purpose:                paramter name:
 
 html {
   font-size: 62.5%; }
-  @media (min-width: 112.5em) {
+  @media only screen and (min-width: 112.5em) {
     html {
       font-size: 75%; } }
-  @media (max-width: 75em) {
+  @media only screen and (max-width: 75em) {
     html {
       font-size: 62.5%; } }
-  @media (max-width: 56.25em) {
+  @media only screen and (max-width: 56.25em) {
     html {
       font-size: 56.25%; } }
-  @media (max-width: 37.5em) {
+  @media only screen and (max-width: 37.5em) {
     html {
       font-size: 50%; } }
 
@@ -89,7 +92,7 @@ body {
   /*	The width and height properties (and min/max properties) includes content, padding and border, but not the margin*/
   padding: 3rem;
   /* padding is not inherited*/ }
-  @media (max-width: 56.25em) {
+  @media only screen and (max-width: 56.25em) {
     body {
       padding: 0; } }
 
@@ -98,7 +101,7 @@ body {
   font-weight: 400;
   line-height: 1.7;
   color: #777; }
-  @media (max-width: 56.25em) {
+  @media only screen and (max-width: 56.25em) {
     body {
       font-weight: 300; } }
 
@@ -112,11 +115,11 @@ body {
     letter-spacing: 4rem;
     animation-name: moveInLeft;
     animation-duration: 1s; }
-    @media (max-width: 56.25em) {
+    @media only screen and (max-width: 56.25em) {
       .heading-primary--main {
         letter-spacing: 1.5rem;
         margin-top: 7rem; } }
-    @media (max-width: 56.25em) {
+    @media only screen and (max-width: 56.25em) {
       .heading-primary--main {
         letter-spacing: 1rem; } }
   .heading-primary--sub {
@@ -126,7 +129,7 @@ body {
     letter-spacing: 1.75rem;
     margin-bottom: 5rem;
     animation: moveInRight 1s ease-in-out; }
-    @media (max-width: 56.25em) {
+    @media only screen and (max-width: 56.25em) {
       .heading-primary--sub {
         letter-spacing: 1rem; } }
 
@@ -134,7 +137,7 @@ body {
   font-size: 4rem;
   text-transform: uppercase;
   font-weight: 700;
-  background-image: linear-gradient(to right, #0084A9, #010b16);
+  background-image: linear-gradient(to right, #fff, #0084A9);
   display: inline-block;
   background-clip: text;
   -webkit-background-clip: text;
@@ -252,10 +255,10 @@ body {
     border-radius: 15px;
     box-shadow: 1.5rem 2rem 1rem rgba(0, 0, 0, 0.15); }
     .card__side--front {
-      background: url(../img/stardust.png) repeat; }
+      background: url(../img/old_map.png) repeat; }
     .card__side--back {
       transform: rotateY(180deg);
-      background: url(../img/stardust.png) repeat; }
+      background: url(../img/old_map.png) repeat; }
   .card:hover .card__side--front {
     transform: rotateY(-180deg); }
   .card:hover .card__side--back {
@@ -269,11 +272,17 @@ body {
     width: 100%; }
     .card__picture--1 {
       background-image: linear-gradient(to right bottom, rgba(211, 73, 83, 0.5), rgba(75, 20, 24, 0.2)), url(../img/gliwice-ratusz-card.jpg); }
+      @media (min-resolution: 192dpi) and (min-width: 37.5rem), (min-width: 125) {
+        .card__picture--1 {
+          background-image: linear-gradient(to right bottom, rgba(0, 132, 169, 0.8), rgba(75, 20, 24, 0.8)), url(../img/gliwice-ratusz-card-large.jpg); } }
     .card__picture--2 {
       background-image: linear-gradient(to right bottom, rgba(190, 160, 24, 0.5), rgba(254, 221, 93, 0.2)), url(../img/radiostacja-card.jpg); }
     .card__picture--3 {
       background-blend-mode: color-dodge;
       background-image: linear-gradient(to right bottom, rgba(19, 64, 116, 0.5), rgba(247, 247, 247, 0.2)), url(../img/willa-caro-card.jpg); }
+      @media (min-resolution: 192dpi) and (min-width: 37.5rem), (min-width: 125) {
+        .card__picture--3 {
+          background-image: linear-gradient(to right bottom, rgba(0, 132, 169, 0.8), rgba(75, 20, 24, 0.8)), url(../img/willa-caro-card-large.jpg); } }
   .card__heading {
     font-size: 3rem;
     font-weight: 700;
@@ -294,7 +303,7 @@ body {
       background-image: linear-gradient(to right bottom, rgba(19, 64, 116, 0.5), rgba(0, 132, 169, 0.2)); }
   .card__details {
     padding: 2.5rem;
-    color: #fff; }
+    color: #4b1418; }
     .card__details ul {
       list-style: none;
       width: 80%;
@@ -319,7 +328,7 @@ body {
     font-weight: 300;
     color: #fff;
     display: block; }
-  @media (max-width: 75em) {
+  @media only screen and (max-width: 56.25em), only screen and (hover: none) {
     .card__heading {
       font-size: 3rem;
       font-weight: 700;
@@ -349,7 +358,7 @@ body {
             padding-top: 2.5rem; }
           .card__details ul li:not(:last-child) {
             border-bottom: 1px solid #fff; } }
-  @media (max-width: 56.25em) {
+  @media only screen and (max-width: 56.25em) {
     .card__details {
       padding: 2.5rem;
       color: #fff; }
@@ -380,7 +389,7 @@ body {
   width: 90%;
   display: block;
   transition: all .2s; }
-  @media (max-width: 37.5em) {
+  @media only screen and (max-width: 37.5em) {
     .form__input {
       width: 100%; } }
   .form__input:focus {
@@ -479,7 +488,7 @@ body {
     display: inline-block; }
   .popup__close:hover {
     transform: scale(1.2); }
-  @media (max-width: 56.25em) {
+  @media only screen and (max-width: 56.25em) {
     .popup {
       background-color: rgba(0, 0, 0, 0.8);
       z-index: 3333;
@@ -535,20 +544,137 @@ body {
         font-size: 3.5rem;
         text-decoration: none;
         transition: all .3s;
-        display: inline-block; }
-      .popup__close:hover {
-        transform: scale(1.2); } }
+        display: inline-block; } }
+
+.paragraph {
+  color: #000;
+  font-weight: 300; }
+
+.app-simple-search {
+  flex: 0 0 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  @media only screen and (max-width: 37.5em) {
+    .app-simple-search {
+      flex: 1; } }
+  .app-simple-search__input {
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+    background-color: #fff;
+    border: none;
+    border-radius: 999px;
+    padding: 1rem 2rem;
+    width: 75%;
+    margin: -4rem;
+    transition: all .4s ease-out; }
+    .app-simple-search__input:focus {
+      width: 100%;
+      outline: none;
+      box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.3); }
+    .app-simple-search__input::-webkit-input-placeholder {
+      font-size: 1.4rem;
+      font-weight: 300;
+      color: #777; }
+  .app-simple-search__button {
+    border: none;
+    background-color: #fff; }
+    .app-simple-search__button:focus {
+      outline: none; }
+    .app-simple-search__button:active {
+      transform: translateY(1px); }
+  .app-simple-search__icon {
+    height: 2rem;
+    width: 2rem;
+    fill: #134074; }
+
+.app-nav {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  justify-content: space-between; }
+  @media only screen and (max-width: 37.5em) {
+    .app-nav {
+      flex-direction: row; } }
+  .app-nav__item {
+    padding: 2rem 0;
+    list-style: none;
+    font-size: 1.6rem;
+    text-transform: uppercase;
+    margin-top: 2rem;
+    position: relative; }
+    @media only screen and (max-width: 37.5em) {
+      .app-nav__item {
+        display: flex;
+        flex: 0 0 25%;
+        align-items: stretch;
+        justify-content: center;
+        flex-direction: row;
+        text-align: center;
+        margin: 0; } }
+    .app-nav__item:not(:last-child) {
+      margin-bottom: .7rem; }
+    .app-nav__item::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-color: goldenrod;
+      height: 100%;
+      width: 1rem;
+      opacity: 0;
+      transition: all .3s; }
+    .app-nav__item--active {
+      pointer-events: none;
+      cursor: default; }
+    .app-nav__item:hover::after, .app-nav__item--active::after {
+      opacity: 1; }
+  .app-nav__link {
+    text-decoration: none;
+    color: #333;
+    display: flex;
+    align-content: center;
+    justify-content: space-between;
+    position: relative;
+    margin: 0rem 2rem;
+    transition: all .5s; }
+    @media only screen and (max-width: 37.5em) {
+      .app-nav__link {
+        flex-direction: column;
+        align-self: stretch; } }
+    .app-nav__link:not(:last-child) {
+      margin: 1.5rem 2rem; }
+    .app-nav__link:link, .app-nav__link:visited {
+      display: flex;
+      align-items: center;
+      transition: all .5s; }
+    .app-nav__link:active {
+      letter-spacing: 2;
+      color: #777; }
+    .app-nav__link:hover {
+      font-weight: 700; }
+  .app-nav__link--active {
+    font-weight: 700; }
+  .app-nav__link:hover .app-nav__icon {
+    fill: goldenrod;
+    transform: scale(1.3); }
+  .app-nav__icon {
+    height: 2.5rem;
+    width: 2.5rem;
+    transition: all .5s;
+    fill: #f7f7f7; }
 
 .row {
   max-width: 114rem;
   margin: 0 auto; }
-  @media (max-width: 56.25em) {
+  @media only screen and (max-width: 56.25em) {
     .row {
       max-width: 50rem;
       padding: 0 2rem; } }
   .row:not(:last-child) {
     margin-bottom: 8rem; }
-    @media (max-width: 56.25em) {
+    @media only screen and (max-width: 56.25em) {
       .row:not(:last-child) {
         margin-bottom: 6rem; } }
   .row::after {
@@ -559,14 +685,14 @@ body {
     float: left; }
     .row [class^="col-"]:not(:last-child) {
       margin-right: 6rem; }
-      @media (max-width: 75em) {
+      @media only screen and (max-width: 75em) {
         .row [class^="col-"]:not(:last-child) {
           margin-right: 6rem; } }
-      @media (max-width: 56.25em) {
+      @media only screen and (max-width: 56.25em) {
         .row [class^="col-"]:not(:last-child) {
           width: 100%;
           padding-bottom: 5rem; } }
-    @media (max-width: 56.25em) {
+    @media only screen and (max-width: 56.25em) {
       .row [class^="col-"] {
         width: 100% !important; } }
   .row .col-1-of-2 {
@@ -584,9 +710,12 @@ body {
 
 .header {
   height: 94vh;
-  background-image: linear-gradient(to right bottom, rgba(0, 132, 169, 0.8), rgba(75, 20, 24, 0.8)), url(../img/radiostacja_small.jpg);
+  background-image: linear-gradient(to right bottom, rgba(0, 132, 169, 0.8), rgba(75, 20, 24, 0.8)), url(../img/radiostacja.jpg);
   background-size: cover;
   background-position: auto; }
+  @media only screen and (min-resolution: 192dpi) and (min-width: 37.5rem), only screen and (-webkit-min-device-pixel-ratio: 192dpi) and (min-width: 37.5em), only screen and (min-width: 125) {
+    .header {
+      background-image: linear-gradient(to right bottom, rgba(0, 132, 169, 0.8), rgba(75, 20, 24, 0.8)), url(../img/radiostacja-large.jpg); } }
   .header__logo--box {
     position: absolute;
     top: 4rem;
@@ -612,7 +741,7 @@ body {
   color: #fff;
   text-align: center;
   color: #777; }
-  @media (max-width: 75em) {
+  @media only screen and (max-width: 75em) {
     .footer {
       padding: 5rem 0; } }
   .footer__list {
@@ -664,7 +793,7 @@ body {
   transform: scale(1.2);
   width: 100%;
   height: 100%; }
-  @media (max-width: 37.5em) {
+  @media only screen and (max-width: 37.5em) {
     .navigation__checkbox:checked ~ .navigation__background {
       transform: scale(1.3); } }
 
@@ -672,7 +801,7 @@ body {
   font-size: 3rem;
   opacity: 1;
   width: 100%; }
-  @media (max-width: 37.5em) {
+  @media only screen and (max-width: 37.5em) {
     .navigation__checkbox:checked ~ .navigation__nav {
       font-size: 2.5rem; } }
 
@@ -767,24 +896,101 @@ body {
       width: 100%;
       box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.2); }
 
+.app-container {
+  max-width: 114rem;
+  background-color: #f7f7f7;
+  position: relative;
+  margin: 6rem auto;
+  min-height: 70vh;
+  box-shadow: 0 1.5rem 3rem rgba(255, 255, 255, 0.3); }
+  @media only screen and (max-width: 56.25em) {
+    .app-container {
+      font-size: 75%;
+      margin: 0;
+      width: 100%;
+      min-height: 0;
+      height: 100%; } }
+
+.app-header {
+  height: 6rem;
+  background-color: #134074;
+  border-bottom: 2px solid #BA2632;
+  font-size: 1.6rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center; }
+  .app-header__logo {
+    height: 5rem;
+    margin: 0 2rem; }
+    @media only screen and (max-width: 37.5em) {
+      .app-header__logo {
+        display: none; } }
+  .app-header__info {
+    display: flex;
+    align-self: stretch;
+    flex-direction: column;
+    margin-right: 3rem;
+    display: flex;
+    align-content: flex-end;
+    justify-content: center; }
+    .app-header__info--main {
+      font-size: 1rem;
+      color: #777; }
+    .app-header__info--user {
+      text-transform: uppercase;
+      font-weight: 700;
+      color: #f7f7f7; }
+
+.app-content {
+  display: flex; }
+  @media only screen and (max-width: 37.5em) {
+    .app-content {
+      min-height: 0;
+      height: 100%;
+      margin: 0;
+      flex-direction: column; } }
+
+.app-sidebar {
+  background-color: #777;
+  position: relative;
+  flex: 0 0 20%;
+  position: relative; }
+  @media only screen and (max-width: 37.5em) {
+    .app-sidebar {
+      flex-direction: row; } }
+
+.app-monument-view {
+  flex: 1;
+  font-size: 4rem;
+  background-color: #f7f7f7; }
+  @media only screen and (max-width: 56.25em) {
+    .app-monument-view {
+      overflow-y: scroll;
+      -webkit-overflow-scrolling: touch;
+      min-height: 0; } }
+  @media only screen and (max-width: 37.5em) {
+    .app-monument-view {
+      min-height: 0;
+      height: 100%; } }
+
 .section-about {
   background-color: #f7f7f7;
   padding: 10rem 0 15rem 0; }
-  @media (max-width: 75em) {
+  @media only screen and (max-width: 75em) {
     .section-about {
       padding: 5rem 0 10rem 0; } }
 
 .section-cards {
-  background: url(../img/cheap_diagonal_fabric.png) repeat scroll 0% 0%;
+  background: url(../img/stardust.png) repeat scroll 0% 0%;
   padding: 10rem 0 20rem 0; }
-  @media (max-width: 75em) {
+  @media only screen and (max-width: 75em) {
     .section-cards {
       padding: 5rem 0 10rem 0; } }
 
 .section-search {
   padding: 15rem 0;
   background-color: #f7f7f7; }
-  @media (max-width: 75em) {
+  @media only screen and (max-width: 75em) {
     .section-search {
       padding: 10rem 0; } }
 
@@ -796,10 +1002,24 @@ body {
   .search__form {
     width: 50%;
     padding: 6rem; }
-    @media (max-width: 75em) {
+    @media only screen and (max-width: 75em) {
       .search__form {
         width: 75%;
         background-image: linear-gradient(to right, rgba(19, 64, 116, 0.9) 0%, rgba(19, 64, 116, 0.9) 100%, transparent 50%), url(../img/rynek.jpg); } }
-    @media (max-width: 56.25em) {
+    @media only screen and (max-width: 56.25em) {
       .search__form {
         width: 100%; } }
+
+.app-page {
+  height: 100vh;
+  width: 100%;
+  background-color: #333;
+  position: fixed;
+  top: 0;
+  left: 0; }
+
+.welcome {
+  text-align: center; }
+  .welcome__text {
+    font-size: 3rem;
+    margin-top: 5rem; }
