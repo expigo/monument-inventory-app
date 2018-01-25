@@ -8,8 +8,31 @@
 
 html {
     font-size: 62.5%;
+
+    @include breakpoint(extra-large) {
+    font-size: 75%;                 // 12px
+        
+    }
+
+    @include breakpoint(large) {
+        font-size: 62.5%;           // 10
+
+    }
+
+    @include breakpoint(medium) {
+        font-size: 56.25%;
+    }
+
+    @include breakpoint(small) {
+        font-size: 50%;
+    }
 }
 
 body {
     box-sizing: border-box; /*	The width and height properties (and min/max properties) includes content, padding and border, but not the margin*/
+    padding: 3rem; /* padding is not inherited*/
+
+    @include breakpoint(medium) {
+        padding: 0;
+    }
   }

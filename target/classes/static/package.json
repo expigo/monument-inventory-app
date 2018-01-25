@@ -4,11 +4,26 @@
   "description": "The application for registering monuments in the commune",
   "main": "index.js",
   "scripts": {
-    "compile:sass": "node-sass ./sass/main.scss ./css/style.css"
+    "sass:watch": "node-sass ./sass/main.scss ./css/style.css -w",
+    "devserver": "cd .. && live-server --port=8090",
+    "start": "npm-run-all --parallel devserver sass:watch",
+
+    "sass:compile": "node-sass ./sass/main.scss ./css/style.comp.css",
+    "css:concat": "concat -o ./css/style.concat.css ./css/ionicons.min.css ./css/style.comp.css",
+    "css:prefix": "postcss --use autoprefixer -b \"last 10 versions\" ./css/style.comp.css -o ./css/style.prefix.css",
+    "css:compress": "node-sass ./css/style.prefix.css ./css/style.min.css --output-style compressed",
+    "css:build": "npm-run-all sass:compile css:concat css:prefix css:compress"
   },
   "author": "Kryspin",
   "license": "ISC",
   "devDependencies": {
-    "node-sass": "^4.7.2"
+    "autoprefixer": "^7.2.5",
+    "concat": "^1.0.3",
+    "node-sass": "^4.7.2",
+    "npm-run-all": "^4.1.2",
+    "postcss-cli": "^4.1.1"
+  },
+  "dependencies": {
+    "jquery": "^3.3.1"
   }
 }

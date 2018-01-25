@@ -1,101 +1,141 @@
+######################
+# Project Specific
+######################
+/build/www/**
+/src/test/javascript/coverage/
+/src/test/javascript/PhantomJS*/
 
-# Created by https://www.gitignore.io/api/windows,intellij,visualstudiocode
+######################
+# Node
+######################
+/node/
+node_tmp/
+node_modules/
+npm-debug.log.*
 
-### Intellij ###
-# Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm, CLion, Android Studio and Webstorm
-# Reference: https://intellij-support.jetbrains.com/hc/en-us/articles/206544839
+######################
+# SASS
+######################
+.sass-cache/
 
-# User-specific stuff:
-.idea/**/workspace.xml
-.idea/**/tasks.xml
-.idea/dictionaries
+######################
+# Eclipse
+######################
+*.pydevproject
+.project
+.metadata
+tmp/
+tmp/**/*
+*.tmp
+*.bak
+*.swp
+*~.nib
+local.properties
+.classpath
+.settings/
+.loadpath
+.factorypath
+/src/main/resources/rebel.xml
 
-# Sensitive or high-churn files:
-.idea/**/dataSources/
-.idea/**/dataSources.ids
-.idea/**/dataSources.xml
-.idea/**/dataSources.local.xml
-.idea/**/sqlDataSources.xml
-.idea/**/dynamic.xml
-.idea/**/uiDesigner.xml
+# External tool builders
+.externalToolBuilders/**
 
-# Gradle:
-.idea/**/gradle.xml
-.idea/**/libraries
+# Locally stored "Eclipse launch configurations"
+*.launch
 
-# CMake
-cmake-build-debug/
+# CDT-specific
+.cproject
 
-# Mongo Explorer plugin:
-.idea/**/mongoSettings.xml
+# PDT-specific
+.buildpath
 
-## File-based project format:
+######################
+# Intellij
+######################
+.idea/
+*.iml
 *.iws
+*.ipr
+*.ids
+*.orig
 
-## Plugin-specific files:
+######################
+# Visual Studio Code
+######################
+.vscode/
 
-# IntelliJ
-/out/
+######################
+# Maven
+######################
+/log/
+/target/
 
-# mpeltonen/sbt-idea plugin
-.idea_modules/
+######################
+# Gradle
+######################
+.gradle/
+/build/
 
-# JIRA plugin
-atlassian-ide-plugin.xml
+######################
+# Package Files
+######################
+*.jar
+*.war
+*.ear
+*.db
 
-# Cursive Clojure plugin
-.idea/replstate.xml
-
-# Ruby plugin and RubyMine
-/.rakeTasks
-
-# Crashlytics plugin (for Android Studio and IntelliJ)
-com_crashlytics_export_strings.xml
-crashlytics.properties
-crashlytics-build.properties
-fabric.properties
-
-### Intellij Patch ###
-# Comment Reason: https://github.com/joeblau/gitignore.io/issues/186#issuecomment-215987721
-
-# *.iml
-# modules.xml
-# .idea/misc.xml
-# *.ipr
-
-# Sonarlint plugin
-.idea/sonarlint
-
-### VisualStudioCode ###
-.vscode/*
-!.vscode/settings.json
-!.vscode/tasks.json
-!.vscode/launch.json
-!.vscode/extensions.json
-.history
-
-### Windows ###
-# Windows thumbnail cache files
+######################
+# Windows
+######################
+# Windows image file caches
 Thumbs.db
-ehthumbs.db
-ehthumbs_vista.db
 
 # Folder config file
 Desktop.ini
 
-# Recycle Bin used on file shares
-$RECYCLE.BIN/
+######################
+# Mac OSX
+######################
+.DS_Store
+.svn
 
-# Windows Installer files
-*.cab
-*.msi
-*.msm
-*.msp
+# Thumbnails
+._*
 
-# Windows shortcuts
-*.lnk
+# Files that might appear on external disk
+.Spotlight-V100
+.Trashes
 
-node_modules
+######################
+# Directories
+######################
+/bin/
+/deploy/
 
+######################
+# Logs
+######################
+*.log
 
-# End of https://www.gitignore.io/api/windows,intellij,visualstudiocode
+######################
+# Others
+######################
+*.class
+*.*~
+*~
+.merge_file*
+
+######################
+# Gradle Wrapper
+######################
+!gradle/wrapper/gradle-wrapper.jar
+
+######################
+# Maven Wrapper
+######################
+!.mvn/wrapper/maven-wrapper.jar
+
+######################
+# ESLint
+######################
+.eslintcache
