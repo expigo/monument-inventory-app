@@ -1,5 +1,6 @@
 package com.kryspinmusiol.monumentinventoryapp.service;
 
+import com.kryspinmusiol.monumentinventoryapp.command.MonumentCommand;
 import com.kryspinmusiol.monumentinventoryapp.model.Monument;
 import com.kryspinmusiol.monumentinventoryapp.repository.MonumentRepository;
 import lombok.extern.slf4j.Slf4j;
@@ -42,5 +43,15 @@ public class MonumentServiceImpl implements MonumentService {
         }
 
         return monumentOptional.get();
+    }
+
+    @Override
+    public MonumentCommand saveMonumentCommand(MonumentCommand monumentCommand) {
+
+        Monument monumentDetached = monumentCommandToMonument.convert(monumentCommand);
+
+        Monument monumentSaved = monumentRepository.save(monumentDetached);
+        log.debug("Monument saved (id): " + monumentSaved.getId());
+        return monumentToMonumentCommand.convert(monumentSaved);
     }
 }

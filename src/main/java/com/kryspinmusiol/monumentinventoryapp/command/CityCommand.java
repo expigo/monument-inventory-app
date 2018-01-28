@@ -1,9 +1,13 @@
 package com.kryspinmusiol.monumentinventoryapp.command;
 
-import com.kryspinmusiol.monumentinventoryapp.model.AdministrativeArea;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
-import javax.persistence.Embedded;
 
+@Getter
+@Setter
+@NoArgsConstructor
 public class CityCommand {
 
     private String name;

@@ -1,7 +1,13 @@
 package com.kryspinmusiol.monumentinventoryapp.command;
 
-import com.kryspinmusiol.monumentinventoryapp.model.Address;
 
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@Getter
+@Setter
+@NoArgsConstructor
 public class MonumentCommand {
 
     private Long id;
