@@ -1,7 +1,8 @@
 .app-page {
     // padding: 0rem ;  // override the property form the body tag, so that we are able to center it easier
-    height: 100vh;
+    // height: 100vh;
     width: 100%;
+    min-height: 100vh;
     // background-image: linear-gradient(
     //     to right top,
     //     $color-secondary-light,
@@ -11,9 +12,87 @@
     // background: url(../img/stardust.png) repeat scroll 0% 0%;
 
     background-color: $color-grey-dark-2;
+    // background-size: cover;
 
 
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
+
+    @include breakpoint(medium) {
+        position: relative;
+        min-height: 0;
+        // display: none;
+    }
+}
+
+.app-monument-view {
+    flex: 1;
+
+    // min-height: min-content;
+
+    
+    background-color: $color-grey-light;
+
+
+
+
+    @include breakpoint(medium) {
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+    
+
+    @include breakpoint(small) {
+        // min-height: 0;
+        // height: 100%;
+    }
+
+    &__heading {
+        text-align: center;
+        font-size: 2.3rem;
+        border-bottom: 1px solid $color-secondary;
+    }
+
+    &__information {
+        display: flex;
+
+        
+        @include breakpoint(medium) {
+            flex-direction: column;
+                
+        }
+
+        @include breakpoint(medium) {
+            overflow-y: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        &--images {
+            flex: 0 0 50%;
+        }
+
+        &--container {
+            display: flex;
+            flex-direction: column;
+
+        }
+
+        &--block {
+            padding: 1rem 5rem;
+            display: flex;
+            flex-direction: column;
+        }
+
+        &--key {
+            font-weight: 300;
+            font-size: 1.3rem;
+        }
+
+        &--value {
+            font-size: 3rem;
+            padding: 0 1rem;
+                        
+        }
+    }
 }

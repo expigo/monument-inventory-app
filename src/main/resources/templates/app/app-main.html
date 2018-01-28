@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,23 +8,25 @@
 
     <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet">
 
-    <link rel="stylesheet" type="text/css" th:href="@{/css/style.min.css}" />
-    <link rel="stylesheet" type="text/css" href="../static/css/style.css" />
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" />
+    <!--<link rel="stylesheet" type="text/css" href="../static/css/style.css" />-->
 
-    <link rel="shortcut icon" type="image/png" href="../static/img/favicon.ico">
+    <!--<link rel="shortcut icon" type="image/png" href="../../static/img/favicon.ico">-->
+    <link rel="shortcut icon" type="image/png" th:href="@{img/favicon.ico}">
 
 </head>
 <body>
     <div class="app-page">
         <div class="app-container">
             <header class="app-header">
-               <img src="../static/img/logo.png" alt="" class="app-header__logo">
+               <!--<img src="../../static/img/logo.png" alt="" class="app-header__logo">-->
+               <img th:src="@{../img/logo.png}" alt="Logo" class="app-header__logo">
 
                <form action="#" class="app-simple-search">
                    <input type="text" class="app-simple-search__input" placeholder="Wyszukaj zabytek...">
                     <button class="app-simple-search__button">
-                        <svg class="app-simple-search__icon">
-                            <use href="../static/img/sprite.svg#icon-search"></use>
+                        <svg type="image/svg+xml" class="app-simple-search__icon">
+                            <use th:href="@{../img/sprite.svg#icon-search}"></use>
                         </svg>
                     </button>
                </form>
@@ -36,45 +38,51 @@
 
             </header>
             <div class="app-content">
+                
                 <div class="app-monument-view">
-                    MONUMENT DETAILS COMES HERE!!1ONE
+                    <div class="welcome">
+                        <p class="welcome__text">Witaj w panelu administracyjnym.</p>
+                    </div>
                 </div>      
                               
                 <nav class="app-sidebar">
                     <ul class="app-nav">
                         <!-- HOME -->
-                        <li class="app-nav__item">
-                            <a href="" class="app-nav__link">
+                        <li class="app-nav__item app-nav__item--active">
+                            <a href="#" class="app-nav__link app-nav__link">
                                 <span>Strona Główna</span>
                                 <svg class="app-nav__icon">
-                                    <use href="../static/img/sprite.svg#icon-chevrons-left"></use>
+                                    <use th:href="@{../img/sprite.svg#icon-chevrons-left}"></use>
                                 </svg>
                             </a>
                         </li>
                         <!-- ADVANCED SEARCH -->                        
                         <li class="app-nav__item">
-                            <a href="/templates/advanced-search.html" class="app-nav__link">
+                            <a th:href="@{/app/advanced-search}" class="app-nav__link">
                                 <span>Wyszukaj</span>
                                 <svg class="app-nav__icon">
-                                    <use href="../static/img/sprite.svg#icon-search"></use>
+                                    <!--<use href="../static/img/sprite.svg#icon-search"></use>-->
+                                    <use th:href="@{../img/sprite.svg#icon-search}"></use>
                                 </svg>
                             </a>
                         </li>
                         <!-- ADD -->
                         <li class="app-nav__item">
-                            <a href="" class="app-nav__link">
+                            <a th:href="@{/app/add-monument}" class="app-nav__link">
                                 <span>Dodaj</span>
                                 <svg class="app-nav__icon">
-                                    <use href="../static/img/sprite.svg#icon-plus-circle"></use>
+                                    <!--<use href="../static/img/sprite.svg#icon-plus-circle"></use>-->
+                                    <use th:href="@{../img/sprite.svg#icon-plus-circle}"></use>
                                 </svg>
                             </a>
                         </li>
                         <!-- LOGOUT -->
                         <li class="app-nav__item app-nav__item--logout">
-                            <a href="" class="app-nav__link">
+                            <a th:href="@{/index.html}" class="app-nav__link">
                                 <span>Wyloguj się</span>
                                 <svg class="app-nav__icon">
-                                    <use href="../static/img/sprite.svg#icon-log-out"></use>
+                                    <!--<use href="../static/img/sprite.svg#icon-log-out"></use>-->
+                                    <use th:href="@{../img/sprite.svg#icon-log-out}"></use>
                                 </svg>
                             </a>
                         </li>

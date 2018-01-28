@@ -665,6 +665,15 @@ body {
     transition: all .5s;
     fill: #f7f7f7; }
 
+.address {
+  display: flex;
+  flex-direction: column;
+  width: 100%; }
+
+.administrative-area__pair--key {
+  padding: 0 1rem;
+  font-size: 1.1rem; }
+
 .row {
   max-width: 114rem;
   margin: 0 auto; }
@@ -710,7 +719,7 @@ body {
 
 .header {
   height: 94vh;
-  background-image: linear-gradient(to right bottom, rgba(0, 132, 169, 0.8), rgba(75, 20, 24, 0.8)), url(../img/radiostacja.jpg);
+  background-image: linear-gradient(to right bottom, rgba(0, 132, 169, 0.8), rgba(75, 20, 24, 0.8)), url(../img/radiostacja-small.jpg);
   background-size: cover;
   background-position: auto; }
   @media only screen and (min-resolution: 192dpi) and (min-width: 37.5rem), only screen and (-webkit-min-device-pixel-ratio: 192dpi) and (min-width: 37.5em), only screen and (min-width: 125) {
@@ -901,15 +910,17 @@ body {
   background-color: #f7f7f7;
   position: relative;
   margin: 6rem auto;
-  min-height: 70vh;
   box-shadow: 0 1.5rem 3rem rgba(255, 255, 255, 0.3); }
   @media only screen and (max-width: 56.25em) {
     .app-container {
       font-size: 75%;
       margin: 0;
-      width: 100%;
-      min-height: 0;
-      height: 100%; } }
+      width: 100%; } }
+  @media only screen and (max-width: 37.5em) {
+    .app-container {
+      display: flex;
+      flex-direction: column;
+      height: 100vh; } }
 
 .app-header {
   height: 6rem;
@@ -918,7 +929,8 @@ body {
   font-size: 1.6rem;
   display: flex;
   justify-content: space-between;
-  align-items: center; }
+  align-items: center;
+  flex: 0 0 auto; }
   .app-header__logo {
     height: 5rem;
     margin: 0 2rem; }
@@ -946,7 +958,6 @@ body {
   @media only screen and (max-width: 37.5em) {
     .app-content {
       min-height: 0;
-      height: 100%;
       margin: 0;
       flex-direction: column; } }
 
@@ -957,21 +968,8 @@ body {
   position: relative; }
   @media only screen and (max-width: 37.5em) {
     .app-sidebar {
-      flex-direction: row; } }
-
-.app-monument-view {
-  flex: 1;
-  font-size: 4rem;
-  background-color: #f7f7f7; }
-  @media only screen and (max-width: 56.25em) {
-    .app-monument-view {
-      overflow-y: scroll;
-      -webkit-overflow-scrolling: touch;
-      min-height: 0; } }
-  @media only screen and (max-width: 37.5em) {
-    .app-monument-view {
-      min-height: 0;
-      height: 100%; } }
+      flex-direction: row;
+      flex: 0 0 10%; } }
 
 .section-about {
   background-color: #f7f7f7;
@@ -1011,12 +1009,52 @@ body {
         width: 100%; } }
 
 .app-page {
-  height: 100vh;
   width: 100%;
+  min-height: 100vh;
   background-color: #333;
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0; }
+  @media only screen and (max-width: 56.25em) {
+    .app-page {
+      position: relative;
+      min-height: 0; } }
+
+.app-monument-view {
+  flex: 1;
+  background-color: #f7f7f7; }
+  @media only screen and (max-width: 56.25em) {
+    .app-monument-view {
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch; } }
+  .app-monument-view__heading {
+    text-align: center;
+    font-size: 2.3rem;
+    border-bottom: 1px solid #BA2632; }
+  .app-monument-view__information {
+    display: flex; }
+    @media only screen and (max-width: 56.25em) {
+      .app-monument-view__information {
+        flex-direction: column; } }
+    @media only screen and (max-width: 56.25em) {
+      .app-monument-view__information {
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch; } }
+    .app-monument-view__information--images {
+      flex: 0 0 50%; }
+    .app-monument-view__information--container {
+      display: flex;
+      flex-direction: column; }
+    .app-monument-view__information--block {
+      padding: 1rem 5rem;
+      display: flex;
+      flex-direction: column; }
+    .app-monument-view__information--key {
+      font-weight: 300;
+      font-size: 1.3rem; }
+    .app-monument-view__information--value {
+      font-size: 3rem;
+      padding: 0 1rem; }
 
 .welcome {
   text-align: center; }
