@@ -1,6 +1,7 @@
 package com.kryspinmusiol.monumentinventoryapp.command;
 
 
+import com.kryspinmusiol.monumentinventoryapp.model.Accessibility;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -20,7 +21,7 @@ public class MonumentCommand {
 
     private String description;
 
-    private boolean isRepresentative;
+    private Accessibility accessibility;
 
     private AddressCommand address;
 

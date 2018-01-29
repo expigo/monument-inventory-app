@@ -1,10 +1,3 @@
-
-// new GMaps({
-//     div: '.popup__map',
-//     lat: -12.043333,
-//     lng: -77.028333
-//   });
-
 function initMap() {
     var townHall = {lat: 50.294042, lng: 18.665822};
     var mapHall = new google.maps.Map(document.getElementById('map--town-hall'), {
@@ -38,6 +31,21 @@ function initMap() {
   }
 
   $(document).ready(function () {
+
+        // datatable
+        $('.datatable__table').DataTable({
+            "language": {
+                "search": "Szukaj:"
+              },
+            responsive: {
+                breakpoints: [
+                    { name: 'large', width: Infinity },
+                    { name: 'normal',  width: 1200 },
+                    { name: 'medium',  width: 900 },
+                    { name: 'small',   width: 600 }
+                ]
+            }
+        });
 
         /*Scroll on buttons*/
       $('.navigation__link--2').click(function () {
@@ -95,5 +103,11 @@ function initMap() {
               }
           });
       // end
+
+
+
   });
 
+//   $(document).ready(function() {
+//     $('.datatable__table').DataTable();
+// } );

@@ -5,7 +5,9 @@ import com.kryspinmusiol.monumentinventoryapp.command.CityCommand;
 import com.kryspinmusiol.monumentinventoryapp.model.City;
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.lang.Nullable;
+import org.springframework.stereotype.Component;
 
+@Component
 public class CityToCityCommand implements Converter<City, CityCommand> {
 
     private final AdministrativeAreaToAdministrativeAreaCommand administrativeAreaConverter;

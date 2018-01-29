@@ -8,8 +8,23 @@
 
     <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet">
 
-    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" />
-    <!--<link rel="stylesheet" type="text/css" href="../static/css/style.css" />-->
+    <!-- <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" /> -->
+    
+
+    <link rel="stylesheet" type="text/css" href="../../static/css/style.css" />
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
+    <!-- <link rel="stylesheet" type="text/css" href="../../../resources/static/css/style.css" /> -->
+    <!-- <link rel="stylesheet" type="text/css" href="../../static/node_modules/tablesaw/dist/tablesaw.css" /> -->
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4-4.0.0/jq-3.2.1/dt-1.10.16/fh-3.1.3/r-2.2.1/datatables.min.css"/>
+ 
+<!--     
+        <script src="../../static/node_modules/jquery/dist/jquery.min.js"></script>
+        <script th:src="@{node_modules/jquery/dist/jquery.min.js}"></script> -->
+    
+
+
+    
 
     <!--<link rel="shortcut icon" type="image/png" href="../../static/img/favicon.ico">-->
     <link rel="shortcut icon" type="image/png" th:href="@{img/favicon.ico}">
@@ -40,8 +55,40 @@
             <div class="app-content">
                 
                 <div class="app-monument-view">
+                    <!--/*@thymesVar id="monument" type="com.kryspinmusiol.monumentinventoryapp.model.Monument"*/-->
                     <div class="datatable">
-
+                        <table class="datatable__table table table-striped table-bordered dt-responsive nowrap" cellspacing="0" width="100%" >
+                            <thead class="datatable__head">
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Nazwa</th>
+                                    <th>Ulica</th>
+                                    <th>Czas powstania</th>
+                                    <th>Pokaż</th>
+                                </tr>
+                            </thead>
+                            <tr th:remove="all">
+                                <td data-th="ID">1</td>
+                                <td data-th="Nazwa">Monument 1</td>
+                                <td data-th="Ulica">Street 1</td>
+                                <td data-th="Czas powstania">Origin 1</td>
+                                <td data-th="Pokaż"><a href="#">View</a></td>
+                            </tr>
+                            <tr th:remove="all">
+                                <td data-th="ID">1</td>
+                                <td data-th="Nazwa">Monument 2</td>
+                                <td data-th="Ulica">Street 2</td>
+                                <td data-th="Czas powstania">Origin 2</td>
+                                <td data-th="Pokaż"><a href="#">View</a></td>
+                            </tr>
+                            <tr th:each="monument : ${result}">
+                                <td data-th="ID" th:text="${monument.id}">200</td>                                
+                                <td data-th="Nazwa" th:text="${monument.name}">test name</td>
+                                <td data-th="Ulica" th:text="${monument.address.street + ' ' + monument.address.streetNumber}">25</td>
+                                <td data-th="Czas powstania" th:text="${monument.name}">test name</td>
+                                <td data-th="Pokaż"><a href="#" th:href="@{'/app/app-show-monument/' + ${monument.id}}">View</a></td>
+                            </tr>
+                        </table>
                     </div>
                 </div>      
                               
@@ -90,5 +137,14 @@
                 </nav>
         </div>
     <!-- </div> -->
+
+
 </body>
+
+<script type="text/javascript" src="https://cdn.datatables.net/v/bs4-4.0.0/jq-3.2.1/dt-1.10.16/fh-3.1.3/r-2.2.1/datatables.min.js"></script>
+
+<script src="../../static/js/script.js"></script>
+<script th:src="@{/js/script.js}"></script>
+
+
 </html>

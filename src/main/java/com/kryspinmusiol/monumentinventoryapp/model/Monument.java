@@ -20,9 +20,11 @@ public class Monument {
 
     private String formsOfProtection;
 
+    @Lob
     private String description;
 
-    private boolean isRepresentative;
+    @Enumerated(value = EnumType.STRING)
+    private Accessibility accessibility;
 
     @Embedded
     private Address address;

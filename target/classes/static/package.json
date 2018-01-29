@@ -7,7 +7,6 @@
     "sass:watch": "node-sass ./sass/main.scss ./css/style.css -w",
     "devserver": "cd .. && live-server --port=8090",
     "start": "npm-run-all --parallel devserver sass:watch",
-
     "sass:compile": "node-sass ./sass/main.scss ./css/style.comp.css",
     "css:concat": "concat -o ./css/style.concat.css ./css/ionicons.min.css ./css/style.comp.css",
     "css:prefix": "postcss --use autoprefixer -b \"last 10 versions\" ./css/style.comp.css -o ./css/style.prefix.css",
@@ -24,6 +23,8 @@
     "postcss-cli": "^4.1.1"
   },
   "dependencies": {
-    "jquery": "^3.3.1"
+    "bootstrap": "^4.0.0",
+    "jquery": "^3.3.1",
+    "tablesaw": "^3.0.8"
   }
 }

@@ -9,24 +9,25 @@
     <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet">
 
     <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
-    <link rel="stylesheet" type="text/css" href="../../static/css/style.css" />
+    <!--<link rel="stylesheet" type="text/css" href="../../static/css/style.css" />-->
 
     <!--<link rel="shortcut icon" type="image/png" href="../../static/img/favicon.ico">-->
-    <link rel="shortcut icon" type="image/png" th:href="@{img/favicon.ico}">
+    <link rel="shortcut icon" type="image/png" th:href="@{/img/favicon.ico}">
 
 </head>
 <body>
 <div class="app-page">
     <div class="app-container">
+
         <header class="app-header">
             <!--<img src="../../static/img/logo.png" alt="" class="app-header__logo">-->
-            <img th:src="@{../img/logo.png}" alt="Logo" class="app-header__logo">
+            <img th:src="@{/img/logo.png}" alt="Logo" class="app-header__logo">
 
             <form action="#" class="app-simple-search">
                 <input type="text" class="app-simple-search__input" placeholder="Wyszukaj zabytek...">
                 <button class="app-simple-search__button">
-                    <svg type="image/svg+xml" class="app-simple-search__icon">
-                        <use th:href="@{../img/sprite.svg#icon-search}"></use>
+                    <svg class="app-simple-search__icon">
+                        <use type="image/svg+xml" th:href="@{/img/sprite.svg#icon-search}"></use>
                     </svg>
                 </button>
             </form>
@@ -37,6 +38,9 @@
             </div>
 
         </header>
+
+
+
         <div class="app-content">
             <!--/*@thymesVar id="monument" type="com.kryspinmusiol.monumentinventoryapp.model.Monument"*/-->
             <div class="app-monument-view">
@@ -47,27 +51,30 @@
 
 
                 <div class="app-monument-view__information">
-                        <div class="app-monument-view__information--images">
-                                carousel will be here
-                            </div>
-                    <div class="app-monument-view__information--container">
-                    <div class="app-monument-view__information--block app-monument-view__information--origin">
-                        <span class="app-monument-view__information--key">Czas powstania</span>
-                        <span class="app-monument-view__information--value" th:text="${monument.getTimeOfOrigin()}">koniec XXw.</span>
+                    <div class="app-monument-view__information--images">
+                        carousel will be here
                     </div>
-                    <div class="app-monument-view__information--block app-monument-view__information--address">
-                        <span class="app-monument-view__information--key">Adres</span>
-                        <div class="address">
+                    <div class="app-monument-view__information--container">
+                        <div class="app-monument-view__information--block app-monument-view__information--origin">
+                            <span class="app-monument-view__information--key">Czas powstania</span>
+                            <span class="app-monument-view__information--value" th:text="${monument.getTimeOfOrigin()}">koniec XXw.</span>
+                        </div>
+                        <div class="app-monument-view__information--block app-monument-view__information--address">
+                            <span class="app-monument-view__information--key">Adres</span>
+                            <div class="address">
                             <span class="app-monument-view__information--value address__value"
                                   th:text="${monument.getAddress().getStreet() + ' ' + monument.getAddress().getStreetNumber()}">Ulica i numer</span>
-                            <span class="app-monument-view__information--value address__value"
-                                  th:text="${monument.getAddress().getCity().getZipcode() + ' ' + monument.getAddress().getCity().getName()}">Kod pocztowy i miasto</span>
-                            <span class="app-monument-view__information--value address__value"
-                                  th:text="${monument.getAddress().getAdditionalInformation1()}">Informacja dodatkowa 1</span>
-                            <span class="app-monument-view__information--value address__value"
-                                  th:text="${monument.getAddress().getAdditionalInformation2()}">Informacja dodatkowa 2</span>
+                                <span class="app-monument-view__information--value address__value"
+                                      th:text="${monument.getAddress().getCity().getZipcode() + ' ' + monument.getAddress().getCity().getName()}">Kod pocztowy i miasto</span>
+                                <span class="app-monument-view__information--value address__value"
+                                      th:text="${monument.getAddress().getAdditionalInformation1()}">Informacja dodatkowa 1</span>
+                                <span class="app-monument-view__information--value address__value"
+                                      th:text="${monument.getAddress().getAdditionalInformation2()}">Informacja dodatkowa 2</span>
+                            </div>
                         </div>
-                    </div>
+
+
+
                         <div class="app-monument-view__information--block app-monument-view__information--administrative-area">
                             <span class="app-monument-view__information--key">Przynależność administracyjna</span>
                             <div class="administrative-area">
@@ -90,16 +97,27 @@
 
                             </div>
                         </div>
-                    <div class="app-monument-view__information--block app-monument-view__information--protection">
-                        <span class="app-monument-view__information--key">Formy ochrony</span>
-                        <span class="app-monument-view__information--value"
-                              th:text="${monument.getFormsOfProtection()}">MZKP</span>
+
+
+                        <div class="app-monument-view__information--block app-monument-view__information--protection">
+                            <span class="app-monument-view__information--key">Formy ochrony</span>
+                            <span class="app-monument-view__information--value"
+                                  th:text="${monument.getFormsOfProtection()}">MZKP</span>
+                        </div>
+
+                        <div class="app-monument-view__information--block app-monument-view__information--description">
+                            <span class="app-monument-view__information--key">Opis</span>
+                            <span class="app-monument-view__information--value" th:text="${monument.getDescription()}">Dluzsza forma wypowiedzi Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident corrupti vitae, assumenda debitis deserunt obcaecati aut distinctio quisquam reprehenderit laboriosam magnam, atque nesciunt eos. Animi, magni nemo! Nesciunt, maiores reprehenderit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti commodi totam delectus aperiam! Laudantium quia, explicabo omnis tempore quasi voluptatum inventore quo et impedit voluptates aliquid? Deserunt molestias blanditiis temporibus? Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor earum itaque tenetur ad sunt, sed reprehenderit quidem at deleniti pariatur illum eum sapiente iure facilis facere! Fugit laborum minus sint! Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus repellat, praesentium dicta, quas ipsam iure accusantium necessitatibus labore velit cum corrupti fugiat, earum consequatur veniam dolorem odio ab aperiam libero?</span>
+                        </div>
+
+                        <div class="app-monument-view__information--block app-monument-view__information--description">
+                            <span class="app-monument-view__information--key">Reprezeentatywny</span>
+                            <!--<span class="app-monument-view__information&#45;&#45;value" th:text="${monument.getAccessibility().equals('PERMITTED')} ? 'TAK' : 'NIE'">NIE</span>-->
+                        </div>
+
+
                     </div>
-                    <div class="app-monument-view__information--block app-monument-view__information--description">
-                        <span class="app-monument-view__information--key">Opis</span>
-                        <span class="app-monument-view__information--value" th:text="${monument.getDescription()}">Dluzsza forma wypowiedzi Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident corrupti vitae, assumenda debitis deserunt obcaecati aut distinctio quisquam reprehenderit laboriosam magnam, atque nesciunt eos. Animi, magni nemo! Nesciunt, maiores reprehenderit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti commodi totam delectus aperiam! Laudantium quia, explicabo omnis tempore quasi voluptatum inventore quo et impedit voluptates aliquid? Deserunt molestias blanditiis temporibus? Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor earum itaque tenetur ad sunt, sed reprehenderit quidem at deleniti pariatur illum eum sapiente iure facilis facere! Fugit laborum minus sint! Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus repellat, praesentium dicta, quas ipsam iure accusantium necessitatibus labore velit cum corrupti fugiat, earum consequatur veniam dolorem odio ab aperiam libero?</span>
-                    </div>
-                </div>
+
                 </div>
             </div>
 
@@ -107,10 +125,10 @@
                 <ul class="app-nav">
                     <!-- HOME -->
                     <li class="app-nav__item">
-                        <a href="/app/add-monument" class="app-nav__link app-nav__link">
+                        <a href="/app/add-monument" class="app-nav__link">
                             <span>Strona Główna</span>
                             <svg class="app-nav__icon">
-                                <use th:href="@{../img/sprite.svg#icon-chevrons-left}"></use>
+                                <use th:href="@{/img/sprite.svg#icon-chevrons-left}"></use>
                             </svg>
                         </a>
                     </li>
@@ -120,7 +138,7 @@
                             <span>Wyszukaj</span>
                             <svg class="app-nav__icon">
                                 <!--<use href="../static/img/sprite.svg#icon-search"></use>-->
-                                <use th:href="@{../img/sprite.svg#icon-search}"></use>
+                                <use th:href="@{/img/sprite.svg#icon-search}"></use>
                             </svg>
                         </a>
                     </li>
@@ -131,7 +149,7 @@
                             <svg class="app-nav__icon">
                                 <!--<use href="../static/img/sprite.svg#icon-plus-circle"></use>-->
                                 <!--<use th:href="@{../img/sprite.svg#icon-plus-circle}"></use>-->
-                                <use th:href="@{../../static/img/sprite.svg#icon-plus-circle}"></use>
+                                <use th:href="@{/img/sprite.svg#icon-plus-circle}"></use>
                             </svg>
                         </a>
                     </li>
@@ -141,13 +159,15 @@
                             <span>Wyloguj się</span>
                             <svg class="app-nav__icon">
                                 <!--<use href="../static/img/sprite.svg#icon-log-out"></use>-->
-                                <use th:href="@{../img/sprite.svg#icon-log-out}"></use>
+                                <use th:href="@{/img/sprite.svg#icon-log-out}"></use>
+
                             </svg>
                         </a>
                     </li>
                 </ul>
             </nav>
         </div>
-        <!-- </div> -->
+    </div>
+</div>
 </body>
 </html>

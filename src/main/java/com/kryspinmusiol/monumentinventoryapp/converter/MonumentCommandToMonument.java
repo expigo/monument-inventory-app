@@ -5,7 +5,12 @@ import com.kryspinmusiol.monumentinventoryapp.model.Monument;
 import lombok.Synchronized;
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.lang.Nullable;
+import org.springframework.stereotype.Component;
 
+/**
+ *
+ */
+@Component
 public class MonumentCommandToMonument implements Converter<MonumentCommand, Monument> {
 
     private final AddressCommandToAddress addressConverter;
@@ -29,7 +34,7 @@ public class MonumentCommandToMonument implements Converter<MonumentCommand, Mon
         monument.setDescription(monumentCommand.getDescription());
         monument.setTimeOfOrigin(monumentCommand.getTimeOfOrigin());
         monument.setFormsOfProtection(monumentCommand.getFormsOfProtection());
-        monument.setRepresentative(monumentCommand.isRepresentative());
+        monument.setAccessibility(monumentCommand.getAccessibility());
 
         monument.setAddress(addressConverter.convert(monumentCommand.getAddress()));
 

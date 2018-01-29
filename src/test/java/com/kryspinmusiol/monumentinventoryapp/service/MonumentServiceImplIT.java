@@ -2,6 +2,8 @@ package com.kryspinmusiol.monumentinventoryapp.service;
 
 
 import com.kryspinmusiol.monumentinventoryapp.command.MonumentCommand;
+import com.kryspinmusiol.monumentinventoryapp.converter.MonumentCommandToMonument;
+import com.kryspinmusiol.monumentinventoryapp.converter.MonumentToMonumentCommand;
 import com.kryspinmusiol.monumentinventoryapp.model.Monument;
 import com.kryspinmusiol.monumentinventoryapp.repository.MonumentRepository;
 import org.junit.Test;
@@ -27,6 +29,7 @@ public class MonumentServiceImplIT {
     @Autowired
     MonumentCommandToMonument monumentCommandToMonument;
 
+    @Autowired
     MonumentToMonumentCommand monumentToMonumentCommand;
 
     @Test
@@ -39,13 +42,14 @@ public class MonumentServiceImplIT {
 
         // when
         monumentCommandTest.setName(NEW_NAME);
-        MonumentCommand monumentCommandSaved = monumentService.saveMonumentService(monumentCommandTest);
+        MonumentCommand monumentCommandSaved = monumentService.saveMonumentCommand(monumentCommandTest);
 
         //then
         // not all properties tested, but it is enough to confirm that it is working
         assertEquals(NEW_NAME, monumentCommandSaved.getName());
         assertEquals(monumentTest.getId(), monumentCommandSaved.getId());
-        assertEquals(monumentTest.getAddress().getCity(), monumentCommandSaved.getAddress().getCity());
+        assertEquals(monumentTest.getAddress().getCity().getName(), monumentCommandSaved.getAddress().getCity().getName());
+        assertEquals(monumentTest.getAddress().getCity().getAdministrativeArea().getCommune(), monumentCommandSaved.getAddress().getCity().getAdministrativeArea().getCommune());
 
     }
 }

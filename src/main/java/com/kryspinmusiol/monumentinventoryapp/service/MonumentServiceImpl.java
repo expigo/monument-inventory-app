@@ -1,6 +1,8 @@
 package com.kryspinmusiol.monumentinventoryapp.service;
 
 import com.kryspinmusiol.monumentinventoryapp.command.MonumentCommand;
+import com.kryspinmusiol.monumentinventoryapp.converter.MonumentCommandToMonument;
+import com.kryspinmusiol.monumentinventoryapp.converter.MonumentToMonumentCommand;
 import com.kryspinmusiol.monumentinventoryapp.model.Monument;
 import com.kryspinmusiol.monumentinventoryapp.repository.MonumentRepository;
 import lombok.extern.slf4j.Slf4j;
@@ -16,11 +18,18 @@ import java.util.Optional;
 public class MonumentServiceImpl implements MonumentService {
 
     private final MonumentRepository monumentRepository;
+    private final MonumentCommandToMonument monumentCommandToMonument;
+    private final MonumentToMonumentCommand monumentToMonumentCommand;
+
 
     @Autowired
-    public MonumentServiceImpl(MonumentRepository monumentRepository) {
+    public MonumentServiceImpl(MonumentRepository monumentRepository, MonumentCommandToMonument monumentCommandToMonument, MonumentToMonumentCommand monumentToMonumentCommand) {
         this.monumentRepository = monumentRepository;
+        this.monumentCommandToMonument = monumentCommandToMonument;
+        this.monumentToMonumentCommand = monumentToMonumentCommand;
     }
+
+
 
 
     @Override

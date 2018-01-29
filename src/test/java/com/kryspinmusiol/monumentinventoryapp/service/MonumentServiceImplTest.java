@@ -1,5 +1,7 @@
 package com.kryspinmusiol.monumentinventoryapp.service;
 
+import com.kryspinmusiol.monumentinventoryapp.converter.MonumentCommandToMonument;
+import com.kryspinmusiol.monumentinventoryapp.converter.MonumentToMonumentCommand;
 import com.kryspinmusiol.monumentinventoryapp.model.Monument;
 import com.kryspinmusiol.monumentinventoryapp.repository.MonumentRepository;
 import org.junit.Before;
@@ -23,11 +25,18 @@ public class MonumentServiceImplTest {
     @Mock
     MonumentRepository monumentRepository;
 
+    @Mock
+    MonumentToMonumentCommand monumentToMonumentCommand;
+
+    @Mock
+    MonumentCommandToMonument monumentCommandToMonument;
+
+
     @Before
     public void setUp() throws Exception {
         MockitoAnnotations.initMocks(this);
 
-        monumentService = new MonumentServiceImpl(monumentRepository);
+        monumentService = new MonumentServiceImpl(monumentRepository, monumentCommandToMonument, monumentToMonumentCommand);
     }
 
 

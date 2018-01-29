@@ -1,0 +1,8 @@
+.datatable {
+
+    font-size: 1.5rem;
+
+    @include breakpoint(small) {
+        font-size: 2rem;
+    }
+}

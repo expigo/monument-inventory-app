@@ -674,6 +674,16 @@ body {
   padding: 0 1rem;
   font-size: 1.1rem; }
 
+.datatable {
+  font-size: 1.5rem; }
+  @media only screen and (max-width: 37.5em) {
+    .datatable {
+      font-size: 2rem; } }
+
+.app-form {
+  margin: 1rem auto;
+  width: 95%; }
+
 .row {
   max-width: 114rem;
   margin: 0 auto; }

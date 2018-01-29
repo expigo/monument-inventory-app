@@ -1,9 +1,6 @@
 package com.kryspinmusiol.monumentinventoryapp.bootstrap;
 
-import com.kryspinmusiol.monumentinventoryapp.model.Address;
-import com.kryspinmusiol.monumentinventoryapp.model.AdministrativeArea;
-import com.kryspinmusiol.monumentinventoryapp.model.City;
-import com.kryspinmusiol.monumentinventoryapp.model.Monument;
+import com.kryspinmusiol.monumentinventoryapp.model.*;
 import com.kryspinmusiol.monumentinventoryapp.repository.MonumentRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +15,9 @@ import java.util.List;
 @Slf4j
 @Component
 public class MonumentBootstrap implements ApplicationListener<ContextRefreshedEvent>{
+
+    private static final Accessibility MONUMENT_ACCESSIBILITY= Accessibility.PERMITTED;
+
 
     private final MonumentRepository monumentRepository;
 
@@ -67,7 +67,7 @@ public class MonumentBootstrap implements ApplicationListener<ContextRefreshedEv
         castleOnTheHill.setFormsOfProtection("MZKP");
         castleOnTheHill.setName("Church");
         castleOnTheHill.setTimeOfOrigin("XII wiek");
-        castleOnTheHill.setRepresentative(true);
+        castleOnTheHill.setAccessibility(MONUMENT_ACCESSIBILITY);
         castleOnTheHill.setId(new Long(1));
 
 

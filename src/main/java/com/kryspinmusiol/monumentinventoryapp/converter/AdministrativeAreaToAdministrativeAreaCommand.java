@@ -5,7 +5,9 @@ import com.kryspinmusiol.monumentinventoryapp.model.AdministrativeArea;
 import lombok.Synchronized;
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.lang.Nullable;
+import org.springframework.stereotype.Component;
 
+@Component
 public class AdministrativeAreaToAdministrativeAreaCommand implements Converter<AdministrativeArea, AdministrativeAreaCommand>{
 
     @Synchronized

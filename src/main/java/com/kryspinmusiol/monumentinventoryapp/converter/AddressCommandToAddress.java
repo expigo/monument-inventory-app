@@ -5,7 +5,9 @@ import com.kryspinmusiol.monumentinventoryapp.model.Address;
 import lombok.Synchronized;
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.lang.Nullable;
+import org.springframework.stereotype.Component;
 
+@Component
 public class AddressCommandToAddress implements Converter<AddressCommand, Address> {
 
     private final CityCommandToCity cityConverter;
