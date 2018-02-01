@@ -56,7 +56,7 @@ public class MonumentBootstrap implements ApplicationListener<ContextRefreshedEv
 
 
 
-        // castle on the hill
+        // church
         address.setCity(city);
         address.setStreet("Ogórkowa");
         address.setStreetNumber(19);
@@ -72,6 +72,46 @@ public class MonumentBootstrap implements ApplicationListener<ContextRefreshedEv
 
 
         monuments.add(castleOnTheHill);
+
+
+
+//        AdministrativeArea administrativeArea = new AdministrativeArea();
+//        City city = new City();
+//        Address address = new Address();
+//        Monument castleOnTheHill = new Monument();
+
+        administrativeArea.setCommune("miasto Gliwice");
+        administrativeArea.setDistrict("gliwicki");
+        administrativeArea.setProvince("śląskie");
+
+        city.setAdministrativeArea(administrativeArea);
+        city.setName("Gliwice");
+        city.setZipcode("44-100");
+
+
+        Monument church = new Monument();
+
+        Address address2 = new Address();
+
+
+        // castle on the hill
+        address2.setCity(city);
+        address2.setStreet("Ogórkowa");
+        address2.setStreetNumber(1000);
+        address2.setAdditionalInformation1("ONEONEOENEONEOEN");
+        address2.setAdditionalInformation2("TWOTWOTWOTWOWTOWTO");
+
+
+        church.setAddress(address2);
+        church.setDescription("DescRiption 2");
+        church.setFormsOfProtection("KZK GOP");
+        church.setName("Castle on the hill");
+        church.setTimeOfOrigin("XX wiek");
+        church.setAccessibility(MONUMENT_ACCESSIBILITY);
+        church.setId(new Long(2));
+
+
+        monuments.add(church);
 
 
         return monuments;

@@ -13,10 +13,13 @@ public class Address {
 
     private String street;
 
+    @Column(name="street_number")
     private Integer streetNumber;
 
+    @Column(name = "additional_information_1", nullable = true)
     private String additionalInformation1;
 
+    @Column(name = "additional_information_2", nullable = true)
     private String additionalInformation2;
 
 

@@ -36,6 +36,8 @@ public class MonumentToMonumentCommand implements Converter<Monument, MonumentCo
         monumentCommand.setFormsOfProtection(monument.getFormsOfProtection());
         monumentCommand.setAccessibility(monument.getAccessibility());
 
+        monumentCommand.setImage(monument.getImage());
+
         monumentCommand.setAddress(addressConverter.convert(monument.getAddress()));
 
         return monumentCommand;

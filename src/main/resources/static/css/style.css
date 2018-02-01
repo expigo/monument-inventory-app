@@ -151,6 +151,8 @@ body {
     color: #fff; }
     .heading-secondary__white--small {
       font-size: 3rem; }
+  .heading-secondary--dark {
+    background-image: linear-gradient(to right, #0084A9, #010b16); }
 
 .heading-ternary {
   font-size: 2rem;
@@ -326,7 +328,7 @@ body {
   .card__more-info {
     font-size: 2.5rem;
     font-weight: 300;
-    color: #fff;
+    color: #4b1418;
     display: block; }
   @media only screen and (max-width: 56.25em), only screen and (hover: none) {
     .card__heading {
@@ -753,7 +755,7 @@ body {
     text-align: center; }
 
 .footer {
-  background: url(../img/cheap_diagonal_fabric.png) repeat scroll 0% 0%;
+  background: url(../img/stardust.png) repeat scroll 0% 0%;
   position: relative;
   padding: 7rem 0;
   font-size: 1.6rem;
@@ -967,15 +969,13 @@ body {
   display: flex; }
   @media only screen and (max-width: 37.5em) {
     .app-content {
-      min-height: 0;
       margin: 0;
       flex-direction: column; } }
 
 .app-sidebar {
   background-color: #777;
   position: relative;
-  flex: 0 0 20%;
-  position: relative; }
+  flex: 0 0 20%; }
   @media only screen and (max-width: 37.5em) {
     .app-sidebar {
       flex-direction: row;
@@ -1037,6 +1037,9 @@ body {
     .app-monument-view {
       overflow-y: auto;
       -webkit-overflow-scrolling: touch; } }
+  @media only screen and (max-width: 37.5em) {
+    .app-monument-view {
+      min-height: 60vh; } }
   .app-monument-view__heading {
     text-align: center;
     font-size: 2.3rem;
@@ -1052,6 +1055,8 @@ body {
         -webkit-overflow-scrolling: touch; } }
     .app-monument-view__information--images {
       flex: 0 0 50%; }
+    .app-monument-view__information--img {
+      max-width: 100%; }
     .app-monument-view__information--container {
       display: flex;
       flex-direction: column; }
@@ -1063,8 +1068,14 @@ body {
       font-weight: 300;
       font-size: 1.3rem; }
     .app-monument-view__information--value {
-      font-size: 3rem;
+      font-size: 1rem;
       padding: 0 1rem; }
+  .app-monument-view__multi-search {
+    height: 100%;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: space-around; }
 
 .welcome {
   text-align: center; }

@@ -69,6 +69,13 @@ function initMap() {
                   scrollTop: /*dist from top*/ $('.section-search').offset().top
               }, 1000);
       })
+
+      $('.navigation__link--5').click(function () {
+          
+              $('html, body').animate({
+                  scrollTop: /*dist from top*/ $('.section-about').offset().top
+              }, 1000);
+      })
   
       /*smooth scrolling*/
           // Select all links with hashes

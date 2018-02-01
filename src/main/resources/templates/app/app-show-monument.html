@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Gliwice | Odkryj piękno</title>
+    <title>Pokaż zabytek</title>
 
     <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet">
 
     <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
-    <!--<link rel="stylesheet" type="text/css" href="../../static/css/style.css" />-->
+    <link rel="stylesheet" type="text/css" href="../../static/css/style.css" />
 
     <!--<link rel="shortcut icon" type="image/png" href="../../static/img/favicon.ico">-->
     <link rel="shortcut icon" type="image/png" th:href="@{/img/favicon.ico}">
@@ -22,9 +22,10 @@
         <header class="app-header">
             <!--<img src="../../static/img/logo.png" alt="" class="app-header__logo">-->
             <img th:src="@{/img/logo.png}" alt="Logo" class="app-header__logo">
+            <!--/*@thymesVar id="monument" type="com.kryspinmusiol.monumentinventoryapp.model.Monument"*/-->
 
-            <form action="#" class="app-simple-search">
-                <input type="text" class="app-simple-search__input" placeholder="Wyszukaj zabytek...">
+            <form action="#" class="app-simple-search" th:object="${monument}"  th:action="@{/app/name-search}">
+                <input type="text" class="app-simple-search__input" placeholder="Wyszukaj zabytek..." name="monName">
                 <button class="app-simple-search__button">
                     <svg class="app-simple-search__icon">
                         <use type="image/svg+xml" th:href="@{/img/sprite.svg#icon-search}"></use>
@@ -40,9 +41,9 @@
         </header>
 
 
+        <!--/*@thymesVar id="monument" type="com.kryspinmusiol.monumentinventoryapp.model.Monument"*/-->
 
         <div class="app-content">
-            <!--/*@thymesVar id="monument" type="com.kryspinmusiol.monumentinventoryapp.model.Monument"*/-->
             <div class="app-monument-view">
                 <div class="app-monument-view__heading">
                     <h2 class="app-monument-view__heading--title" th:text="${monument.getName()}">Monument name
@@ -52,7 +53,12 @@
 
                 <div class="app-monument-view__information">
                     <div class="app-monument-view__information--images">
-                        carousel will be here
+
+                        <img src="&nbsp;" alt="Zdjecie" th:src="@{'/app/' + ${monument.id} + '/img'}"
+                             class="app-monument-view__information--img">
+
+                        <a href="#" th:href="@{'/app/'+ ${monument.id}+'/image'}" class="btn btn-primary" role="button">Zmien zdjecie</a>
+                        <a href="#" th:href="@{'/app/' + ${monument.id} + '/update'}" class="btn btn-primary">Edytuj</a>
                     </div>
                     <div class="app-monument-view__information--container">
                         <div class="app-monument-view__information--block app-monument-view__information--origin">
@@ -111,8 +117,8 @@
                         </div>
 
                         <div class="app-monument-view__information--block app-monument-view__information--description">
-                            <span class="app-monument-view__information--key">Reprezeentatywny</span>
-                            <!--<span class="app-monument-view__information&#45;&#45;value" th:text="${monument.getAccessibility().equals('PERMITTED')} ? 'TAK' : 'NIE'">NIE</span>-->
+                            <span class="app-monument-view__information--key">Dostepny</span>
+                            <span class="app-monument-view__information--value" th:text="${monument.getAccessibility().name().equals('PERMITTED')} ? 'TAK' : 'NIE'">NIE</span>
                         </div>
 
 
@@ -125,7 +131,7 @@
                 <ul class="app-nav">
                     <!-- HOME -->
                     <li class="app-nav__item">
-                        <a href="/app/add-monument" class="app-nav__link">
+                        <a th:href="@{/app/app-main}" class="app-nav__link">
                             <span>Strona Główna</span>
                             <svg class="app-nav__icon">
                                 <use th:href="@{/img/sprite.svg#icon-chevrons-left}"></use>
@@ -134,7 +140,7 @@
                     </li>
                     <!-- ADVANCED SEARCH -->
                     <li class="app-nav__item">
-                        <a href="/app/advanced-search" class="app-nav__link">
+                        <a th:href="@{/app/app-advanced-search}" class="app-nav__link">
                             <span>Wyszukaj</span>
                             <svg class="app-nav__icon">
                                 <!--<use href="../static/img/sprite.svg#icon-search"></use>-->
@@ -144,7 +150,7 @@
                     </li>
                     <!-- ADD -->
                     <li class="app-nav__item">
-                        <a href="/app/add-monument" class="app-nav__link">
+                        <a th:href="@{/app/add}" class="app-nav__link">
                             <span>Dodaj</span>
                             <svg class="app-nav__icon">
                                 <!--<use href="../static/img/sprite.svg#icon-plus-circle"></use>-->
@@ -160,7 +166,6 @@
                             <svg class="app-nav__icon">
                                 <!--<use href="../static/img/sprite.svg#icon-log-out"></use>-->
                                 <use th:href="@{/img/sprite.svg#icon-log-out}"></use>
-
                             </svg>
                         </a>
                     </li>

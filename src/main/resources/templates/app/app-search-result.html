@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Gliwice | Odkryj piękno</title>
+    <title>Wynik wyszukiwania</title>
 
     <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet">
 
@@ -27,7 +27,7 @@
     
 
     <!--<link rel="shortcut icon" type="image/png" href="../../static/img/favicon.ico">-->
-    <link rel="shortcut icon" type="image/png" th:href="@{img/favicon.ico}">
+    <link rel="shortcut icon" type="image/png" th:href="@{/img/favicon.ico}">
 
 </head>
 <body>
@@ -37,14 +37,14 @@
                <!--<img src="../../static/img/logo.png" alt="" class="app-header__logo">-->
                <img th:src="@{../img/logo.png}" alt="Logo" class="app-header__logo">
 
-               <form action="#" class="app-simple-search">
-                   <input type="text" class="app-simple-search__input" placeholder="Wyszukaj zabytek...">
-                    <button class="app-simple-search__button">
-                        <svg type="image/svg+xml" class="app-simple-search__icon">
-                            <use th:href="@{../img/sprite.svg#icon-search}"></use>
-                        </svg>
-                    </button>
-               </form>
+               <form action="#" class="app-simple-search" th:object="${monument}"  th:action="@{/app/name-search}">
+                <input type="text" class="app-simple-search__input" placeholder="Wyszukaj zabytek..." name="monName">
+                <button class="app-simple-search__button">
+                    <svg class="app-simple-search__icon">
+                        <use type="image/svg+xml" th:href="@{/img/sprite.svg#icon-search}"></use>
+                    </svg>
+                </button>
+            </form>
 
                <div class="app-header__info">
                    <span class="app-header__info--main">Zalogowany jako</span>
@@ -85,18 +85,23 @@
                                 <td data-th="ID" th:text="${monument.id}">200</td>                                
                                 <td data-th="Nazwa" th:text="${monument.name}">test name</td>
                                 <td data-th="Ulica" th:text="${monument.address.street + ' ' + monument.address.streetNumber}">25</td>
-                                <td data-th="Czas powstania" th:text="${monument.name}">test name</td>
-                                <td data-th="Pokaż"><a href="#" th:href="@{'/app/app-show-monument/' + ${monument.id}}">View</a></td>
+                                <td data-th="Czas powstania" th:text="${monument.timeOfOrigin}">test name</td>
+                                <td data-th="Akcja"><a href="#" th:href="@{'/app/' + ${monument.id} + '/app-show-monument'}">Pokaż</a>
+                                | <a href="#" th:href="@{'/app/' + ${monument.id} + '/update'}">Edytuj</a>
+                                | <a href="#" th:href="@{'/app/' + ${monument.id} + '/delete'}">Usuń</a>
+                                </td>
                             </tr>
                         </table>
+                        <a href="#" th:href="@{'/app/all'}" class="btn btn-primary">Pokaż wszystko</a>
+
                     </div>
                 </div>      
                               
                 <nav class="app-sidebar">
                     <ul class="app-nav">
                         <!-- HOME -->
-                        <li class="app-nav__item app-nav__item--active">
-                            <a href="#" class="app-nav__link app-nav__link">
+                        <li class="app-nav__item">
+                            <a th:href="@{/app/app-main}" class="app-nav__link app-nav__link">
                                 <span>Strona Główna</span>
                                 <svg class="app-nav__icon">
                                     <use th:href="@{../img/sprite.svg#icon-chevrons-left}"></use>
@@ -105,7 +110,7 @@
                         </li>
                         <!-- ADVANCED SEARCH -->                        
                         <li class="app-nav__item">
-                            <a th:href="@{/app/advanced-search}" class="app-nav__link">
+                            <a th:href="@{/app/app-advanced-search}" class="app-nav__link">
                                 <span>Wyszukaj</span>
                                 <svg class="app-nav__icon">
                                     <!--<use href="../static/img/sprite.svg#icon-search"></use>-->
@@ -115,7 +120,7 @@
                         </li>
                         <!-- ADD -->
                         <li class="app-nav__item">
-                            <a th:href="@{/app/add-monument}" class="app-nav__link">
+                            <a th:href="@{/app/add}" class="app-nav__link">
                                 <span>Dodaj</span>
                                 <svg class="app-nav__icon">
                                     <!--<use href="../static/img/sprite.svg#icon-plus-circle"></use>-->

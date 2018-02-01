@@ -1,7 +1,9 @@
 package com.kryspinmusiol.monumentinventoryapp.service;
 
+import com.kryspinmusiol.monumentinventoryapp.command.MonumentCommand;
 import com.kryspinmusiol.monumentinventoryapp.converter.MonumentCommandToMonument;
 import com.kryspinmusiol.monumentinventoryapp.converter.MonumentToMonumentCommand;
+import com.kryspinmusiol.monumentinventoryapp.exception.NotFoundException;
 import com.kryspinmusiol.monumentinventoryapp.model.Monument;
 import com.kryspinmusiol.monumentinventoryapp.repository.MonumentRepository;
 import org.junit.Before;
@@ -9,6 +11,7 @@ import org.junit.Test;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
+import javax.swing.text.html.Option;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -41,7 +44,7 @@ public class MonumentServiceImplTest {
 
 
     @Test
-    public void getMonumentsTest() throws Exception {
+    public void testGetMonuments() throws Exception {
 
         Monument mon = new Monument();
         List<Monument> monumentsData = new ArrayList<>();
@@ -58,7 +61,7 @@ public class MonumentServiceImplTest {
     }
 
     @Test
-    public void getMonumentByIdTest() throws Exception {
+    public void testGetMonumentById() throws Exception {
 
         Monument mon = new Monument();
         mon.setId(8L);
@@ -74,5 +77,42 @@ public class MonumentServiceImplTest {
         verify(monumentRepository, never()).findAll();
     }
 
+    @Test (expected = NotFoundException.class)
+    public void testGetMonumentByIdNotFound() throws Exception {
 
+        Optional<Monument> monumentOptional = Optional.empty();
+
+        when(monumentRepository.findById(anyLong())).thenReturn(monumentOptional);
+
+        Monument monumentReturned = monumentService.findById(8L);
+    }
+
+    @Test (expected = NumberFormatException.class)
+    public void testGetMonumentNumberFormatException() throws Exception {
+        monumentRepository.findById(Long.valueOf("someDummyStringInput"));
+    }
+
+
+    // command object tests
+
+    @Test
+    public void testGetMonumentCommandById() throws Exception {
+
+        Monument mon = new Monument();
+        mon.setId(8L);
+        Optional<Monument> monumentOptional = Optional.of(mon);
+
+        when(monumentRepository.findById(any())).thenReturn(monumentOptional);
+
+        MonumentCommand monumentCommand = new MonumentCommand();
+        monumentCommand.setId(8L);
+
+        when(monumentToMonumentCommand.convert(any())).thenReturn(monumentCommand);
+
+        MonumentCommand monumentCommandFoundById = monumentService.findMonumentCommandById(8L);
+
+        assertNotNull("Null object returned", monumentCommandFoundById);
+        verify(monumentRepository, times(1)).findById(anyLong());
+        verify(monumentRepository, never()).findAll();
+    }
 }

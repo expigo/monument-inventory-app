@@ -4,12 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Gliwice | Odkryj piękno</title>
+    <title>Dodaj zdjecie</title>
 
     <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet">
 
+    <link rel="stylesheet" type="text/css" href="../../static/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="../../static/node_modules/bootstrap/dist/css/bootstrap.css" />
+
+    <link rel="stylesheet" type="text/css" th:href="@{/node_modules/bootstrap/dist/css/bootstrap.min.css}" />
     <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" />
-    <!--<link rel="stylesheet" type="text/css" href="../static/css/style.css" />-->
+    <!--<link rel="stylesheet" type="text/css" th:href="@{}" />-->
+
+
 
     <!--<link rel="shortcut icon" type="image/png" href="../../static/img/favicon.ico">-->
     <link rel="shortcut icon" type="image/png" th:href="@{img/favicon.ico}">
@@ -22,14 +28,14 @@
                <!--<img src="../../static/img/logo.png" alt="" class="app-header__logo">-->
                <img th:src="@{../img/logo.png}" alt="Logo" class="app-header__logo">
 
-               <form action="#" class="app-simple-search">
-                   <input type="text" class="app-simple-search__input" placeholder="Wyszukaj zabytek...">
-                    <button class="app-simple-search__button">
-                        <svg type="image/svg+xml" class="app-simple-search__icon">
-                            <use th:href="@{../img/sprite.svg#icon-search}"></use>
-                        </svg>
-                    </button>
-               </form>
+               <form action="#" class="app-simple-search" th:object="${monument}"  th:action="@{/app/name-search}">
+                <input type="text" class="app-simple-search__input" placeholder="Wyszukaj zabytek..." name="monName">
+                <button class="app-simple-search__button">
+                    <svg class="app-simple-search__icon">
+                        <use type="image/svg+xml" th:href="@{/img/sprite.svg#icon-search}"></use>
+                    </svg>
+                </button>
+            </form>
 
                <div class="app-header__info">
                    <span class="app-header__info--main">Zalogowany jako</span>
@@ -40,39 +46,51 @@
             <div class="app-content">
                 
                 <div class="app-monument-view">
-                    <div class="welcome">
-                        <p class="welcome__text">Witaj w panelu administracyjnym.</p>
+                    <div class="card text-center">
+                        <div class="card-header u-margin-bottom-small">
+                            Dodaj zdjecie
+                        </div>
+                        <!--/*@thymesVar id="monument" type="com.kryspinmusiol.monumentinventoryapp.model.Monument"*/-->
+                        <div class="card-block ">
+                            <h4 class="card-title">Wybierz zdjecie, ktore chcesz dodac</h4>
+                            <form  action="/" method="post" enctype="multipart/form-data"
+                                   th:action="@{'/app/' + ${monument.getId()} + '/image'}">
+                                <!--<label class="control-label">Select File</label>-->
+                                <input id="image" name="image" type="file" class="file">
+                                <button type="submit" class="btn btn-primary">Submit</button>
+                            </form>
+                        </div>
                     </div>
                 </div>      
                               
                 <nav class="app-sidebar">
                     <ul class="app-nav">
                         <!-- HOME -->
-                        <li class="app-nav__item">
-                            <a th:href="@{/app/app-main}" class="app-nav__link">
+                        <li class="app-nav__item app-nav__item--active">
+                            <a href="#" class="app-nav__link app-nav__link">
                                 <span>Strona Główna</span>
                                 <svg class="app-nav__icon">
-                                    <use th:href="@{../img/sprite.svg#icon-chevrons-left}"></use>
+                                    <use th:href="@{/img/sprite.svg#icon-chevrons-left}"></use>
                                 </svg>
                             </a>
                         </li>
                         <!-- ADVANCED SEARCH -->                        
-                        <li class="app-nav__item app-nav__item--active">
-                            <a href="#" class="app-nav__link">
+                        <li class="app-nav__item">
+                            <a th:href="@{/app/app-advanced-search}" class="app-nav__link">
                                 <span>Wyszukaj</span>
                                 <svg class="app-nav__icon">
                                     <!--<use href="../static/img/sprite.svg#icon-search"></use>-->
-                                    <use th:href="@{../img/sprite.svg#icon-search}"></use>
+                                    <use th:href="@{/img/sprite.svg#icon-search}"></use>
                                 </svg>
                             </a>
                         </li>
                         <!-- ADD -->
                         <li class="app-nav__item">
-                            <a th:href="@{/app/add-monument}" class="app-nav__link">
+                            <a th:href="@{/app/add}" class="app-nav__link">
                                 <span>Dodaj</span>
                                 <svg class="app-nav__icon">
                                     <!--<use href="../static/img/sprite.svg#icon-plus-circle"></use>-->
-                                    <use th:href="@{../img/sprite.svg#icon-plus-circle}"></use>
+                                    <use th:href="@{/img/sprite.svg#icon-plus-circle}"></use>
                                 </svg>
                             </a>
                         </li>
@@ -82,13 +100,22 @@
                                 <span>Wyloguj się</span>
                                 <svg class="app-nav__icon">
                                     <!--<use href="../static/img/sprite.svg#icon-log-out"></use>-->
-                                    <use th:href="@{../img/sprite.svg#icon-log-out}"></use>
+                                    <use th:href="@{/img/sprite.svg#icon-log-out}"></use>
                                 </svg>
                             </a>
                         </li>
                     </ul>
                 </nav>
-        </div>
+            </div>
     <!-- </div> -->
+        </div>
+    </div>
 </body>
+
+<script src="../../static/node_modules/jquery/dist/jquery.min.js"></script>
+<script th:src="@{/node_modules/jquery/dist/jquery.min.js}"></script>
+
+
+<script src="../../static/node_modules/bootstrap/dist/js/bootstrap.js"></script>
+<script th:src="@{/node_modules/bootstrap/dist/js/bootstrap.min.js}"></script>
 </html>

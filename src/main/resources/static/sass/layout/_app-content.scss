@@ -19,7 +19,7 @@
     // }
 
     @include breakpoint(small) {
-        min-height: 0;
+        // min-height: 50vh;
 
         margin: 0;
         flex-direction: column;

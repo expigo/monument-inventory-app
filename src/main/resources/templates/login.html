@@ -1,13 +1,36 @@
 <!doctype html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Logowanie</title>
+    <link rel="shortcut icon" type="image/png" href="../../static/img/favicon.ico">
+    <link rel="shortcut icon" type="image/png" th:href="@{img/favicon.ico}">
+
+    <link rel="stylesheet" type="text/css" href="../../static/node_modules/bootstrap/dist/css/bootstrap.css" />
+
+    <link rel="stylesheet" type="text/css" th:href="@{/node_modules/bootstrap/dist/css/bootstrap.min.css}" />
 </head>
+
 <body>
 
+    <h1>Login page</h1>
+    <p th:if="${loginError}" class="is-invalid">Wrong user or password</p>
+    <form th:action="@{/app/app-main}" method="post">
+        <label for="username">Username</label>:
+        <input type="text" id="username" name="username" autofocus="autofocus" />
+        <br />
+        <label for="password">Password</label>:
+        <input type="password" id="password" name="password" />
+        <br />
+        <input type="submit" value="Log in" />
+    </form>
+
+
+
+
 </body>
+
 </html>

@@ -13,4 +13,7 @@ public interface MonumentService {
 
     MonumentCommand saveMonumentCommand(MonumentCommand monumentCommand);
 
+    MonumentCommand findMonumentCommandById(Long id);
+
+    void deleteById(Long id);
 }

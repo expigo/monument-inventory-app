@@ -14,20 +14,20 @@
 
     <!-- <link rel="stylesheet" href="../static/css/icon-font.css"> -->
     <link rel="stylesheet" type="text/css" href="../static/css/ionicons.min.css">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/ionicons.min.css}">
 
     <!-- <script src="http://maps.google.com/maps/api/js"></script>  -->
 
-    <!--<script src="../static/node_modules/jquery/dist/jquery.min.js"></script>-->
-    <script th:src="@{node_modules/jquery/dist/jquery.min.js}"></script>
 
-    
-    <!--<script src="../static/js/script.js"></script>-->
-    <script th:src="@{js/script.js}"></script>
+
+
 
 
 
 
     <link rel="shortcut icon" type="image/png" href="../static/img/favicon.ico">
+    <link rel="shortcut icon" type="image/png" th:href="@{/img/favicon.ico}">
+    <link rel="shortcut icon" type="image/png" th:href="@{../static/img/favicon.ico}">
 
     <title>Gliwice | Odkryj piękno</title>
 </head>
@@ -76,7 +76,7 @@
                 <span class="heading-primary--sub">Przyszłość jest tu</span>
             </h1>
 
-            <a href="" class="btn btn--white btn--animated">
+            <a href="#" class="btn btn--white btn--animated navigation__link--5">
                 <span>Odkryj!</span>
             </a>
         </div>
@@ -85,7 +85,7 @@
     <main>
         <section class="section-about">
             <div class="u-center-text u-margin-bottom-large">
-                <h2 class="heading-secondary">
+                <h2 class="heading-secondary heading-secondary--dark">
                     Odkryj piękną stronę Gliwic!
                 </h2>
             </div>
@@ -287,32 +287,32 @@
     <footer class="footer">
                 <div class="row">
                     <div class="col-1-of-3">
-                        <p class="footer__copyright">&copy;
+                        <p class="footer__copyright">
                             <span class="footer__year">2018</span>Kryspin Musiol</p>
                     </div>
                     <div class="col-1-of-3">
                         <!--<img src="../static/img/logo.png" alt="Logo" class="footer__logo">-->
-                        <img th:src="@{static/img/logo.png}" alt="Logo" class="footer__logo">
+                        <img th:src="@{img/logo.png}" alt="Logo" class="footer__logo">
                     </div>
                     <div class="col-1-of-3">
                         <ul class="footer__list">
                             <li class="footer__item">
-                                <a href="#" class="footer__social-link footer__social-link--fb">
+                                <a href="https://www.facebook.com/Miasto.Gliwice" class="footer__social-link footer__social-link--fb">
                                     <i class="ion-social-facebook"></i>
                                 </a>
                             </li>
                             <li class="footer__item">
-                                <a href="#" class="footer__social-link footer__social-link--pinterest">
+                                <a href="https://pl.pinterest.com/miastogliwice/" class="footer__social-link footer__social-link--pinterest">
                                     <i class="ion-social-pinterest"></i>
                                 </a>
                             </li>
                             <li class="footer__item">
-                                <a href="#" class="footer__social-link footer__social-link--twitter">
+                                <a href="https://twitter.com/Miasto_Gliwice" class="footer__social-link footer__social-link--twitter">
                                     <i class="ion-social-twitter"></i>
                                 </a>
                             </li>
                             <li class="footer__item">
-                                <a href="#" class="footer__social-link footer__social-link--instagram">
+                                <a href="https://www.instagram.com/gliwice_official/" class="footer__social-link footer__social-link--instagram">
                                     <i class="ion-social-instagram"></i>
                                 </a>
                             </li>
@@ -411,10 +411,6 @@
     </div>
     </div>
 
-    <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB3Kvmn-YZP1MZhw3Eb1cSnv7bGDz_g8GQ&callback=initMap">
-    </script>
-
     
     
         <!-- 
@@ -488,5 +484,21 @@
     </section> -->
 
 </body>
+
+
+
+<script src="../static/node_modules/jquery/dist/jquery.min.js"></script>
+<script th:src="@{node_modules/jquery/dist/jquery.min.js}"></script>
+
+
+<script type="text/javascript" src="https://cdn.datatables.net/v/bs4-4.0.0/jq-3.2.1/dt-1.10.16/fh-3.1.3/r-2.2.1/datatables.min.js"></script>
+
+<script async defer
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB3Kvmn-YZP1MZhw3Eb1cSnv7bGDz_g8GQ&callback=initMap">
+</script>
+
+    
+<script src="../static/js/script.js"></script>
+<script th:src="@{js/script.js}"></script>
 
 </html>

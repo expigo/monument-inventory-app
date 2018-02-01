@@ -21,6 +21,7 @@ public class Monument {
     private String formsOfProtection;
 
     @Lob
+    @Column(length = 5000)
     private String description;
 
     @Enumerated(value = EnumType.STRING)
@@ -28,6 +29,9 @@ public class Monument {
 
     @Embedded
     private Address address;
+
+    @Lob
+    private Byte[] image;
 
 
 

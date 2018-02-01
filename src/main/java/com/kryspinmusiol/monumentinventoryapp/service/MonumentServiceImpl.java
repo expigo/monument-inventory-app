@@ -3,11 +3,14 @@ package com.kryspinmusiol.monumentinventoryapp.service;
 import com.kryspinmusiol.monumentinventoryapp.command.MonumentCommand;
 import com.kryspinmusiol.monumentinventoryapp.converter.MonumentCommandToMonument;
 import com.kryspinmusiol.monumentinventoryapp.converter.MonumentToMonumentCommand;
+import com.kryspinmusiol.monumentinventoryapp.exception.NotFoundException;
 import com.kryspinmusiol.monumentinventoryapp.model.Monument;
 import com.kryspinmusiol.monumentinventoryapp.repository.MonumentRepository;
 import lombok.extern.slf4j.Slf4j;
+import org.omg.CosNaming.NamingContextPackage.NotFound;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -48,11 +51,13 @@ public class MonumentServiceImpl implements MonumentService {
         Optional<Monument> monumentOptional = monumentRepository.findById(id);
 
         if(!monumentOptional.isPresent()) {
-            throw new RuntimeException("Monument not found!");
+
+            throw new NotFoundException("Zabytek o ID: [" + id.toString() + "] nie istnieje!");
         }
 
         return monumentOptional.get();
     }
+
 
     @Override
     public MonumentCommand saveMonumentCommand(MonumentCommand monumentCommand) {
@@ -62,5 +67,16 @@ public class MonumentServiceImpl implements MonumentService {
         Monument monumentSaved = monumentRepository.save(monumentDetached);
         log.debug("Monument saved (id): " + monumentSaved.getId());
         return monumentToMonumentCommand.convert(monumentSaved);
+    }
+
+    @Override
+//    @Transactional // not sure if necessary (the conversion is happening outside of the scope (spring/jpa context) which is problem with lazily loaded data)
+    public MonumentCommand findMonumentCommandById(Long id) {
+        return monumentToMonumentCommand.convert(this.findById(id));
+    }
+
+    @Override
+    public void deleteById(Long id) {
+        monumentRepository.deleteById(id);
     }
 }

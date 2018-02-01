@@ -84,6 +84,15 @@ body {
         }
     }
 
+    &--dark {
+        background-image: linear-gradient(
+            to right,
+            $color-primary-light,
+            $color-primary-dark
+        );
+
+    }
+
 }
 
 

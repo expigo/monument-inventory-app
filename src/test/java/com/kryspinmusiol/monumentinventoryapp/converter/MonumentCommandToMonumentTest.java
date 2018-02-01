@@ -89,6 +89,8 @@ public class MonumentCommandToMonumentTest {
 
         monumentCommand.setAddress(addressCommand);
 
+
+
         // when
 
         Monument monument = monumentCommandToMonument.convert(monumentCommand);
