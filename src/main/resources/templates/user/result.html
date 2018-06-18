@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,7 +17,35 @@
 
 </head>
 <body>
-    
+<div class="container">
+<table class="table table-striped border border-primary rounded mt-3">
+    <thead>
+    <tr>
+        <th scope="col">Nazwa</th>
+        <th scope="col">Ulica</th>
+        <th scope="col">Pokaż</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:remove="all">
+        <td>Mark</td>
+        <td>Otto</td>
+        <td>@mdo</td>
+    </tr>
+    <tr th:remove="all">
+        <td>Jacob</td>
+        <td>Thornton</td>
+        <td>@fat</td>
+    </tr>
+    <tr  th:each="monument : ${userResult}">
+        <td th:text="${monument.name}">Larry</td>
+        <td th:text="${monument.address.street}">the Bird</td>
+        <td><a href="#" th:href="@{'/user/' + ${monument.id} + '/user-show-monument'}">Klik!</a></td>
+    </tr>
+    </tbody>
+</table>
+</div>
+
 </body>
 
 <script src="../static/node_modules/jquery/dist/jquery.min.js"></script>

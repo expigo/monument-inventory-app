@@ -95,7 +95,7 @@
                         </li>
                         <!-- ADD -->
                         <li class="app-nav__item">
-                            <a th:href="@{/app/add-monument}" class="app-nav__link">
+                            <a th:href="@{/app/add}" class="app-nav__link">
                                 <span>Dodaj</span>
                                 <svg class="app-nav__icon">
                                     <!--<use href="../static/img/sprite.svg#icon-plus-circle"></use>-->
@@ -105,7 +105,7 @@
                         </li>
                         <!-- LOGOUT -->
                         <li class="app-nav__item app-nav__item--logout">
-                            <a th:href="@{/index.html}" class="app-nav__link">
+                            <a th:href="@{/logout}" class="app-nav__link">
                                 <span>Wyloguj się</span>
                                 <svg class="app-nav__icon">
                                     <!--<use href="../static/img/sprite.svg#icon-log-out"></use>-->
@@ -113,6 +113,17 @@
                                 </svg>
                             </a>
                         </li>
+
+                        <!-- LOGOUT Button-->
+                        <!--<li class="app-nav__item app-nav__item&#45;&#45;logout">-->
+                            <!--<input type="submit" th:href="@{/logout}" class="app-nav__link">-->
+                                <!--<span>Wyloguj się</span>-->
+                                <!--<svg class="app-nav__icon">-->
+                                    <!--&lt;!&ndash;<use href="../static/img/sprite.svg#icon-log-out"></use>&ndash;&gt;-->
+                                    <!--<use th:href="@{../img/sprite.svg#icon-log-out}"></use>-->
+                                <!--</svg>-->
+                            <!--&lt;!&ndash;</input>&ndash;&gt;-->
+                        <!--</li>-->
                     </ul>
                 </nav>
         </div>

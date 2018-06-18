@@ -6,6 +6,8 @@ import org.springframework.security.config.annotation.authentication.builders.Au
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.core.userdetails.User;
+import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
 @Slf4j
 @EnableWebSecurity
@@ -21,25 +23,35 @@ public class MonumentInventorySecurityConfiguration extends WebSecurityConfigure
 //                .antMatchers("/console/**")
 //                .permitAll();
 
-//                  .antMatchers("/app/**").access("hasRole('ADMIN')")
-//                .antMatchers("/**").permitAll()
-//                .anyRequest().authenticated()
-//                .and()
-//                .formLogin()
-//                .loginPage("/login")
-//                .failureUrl("/login-error")
-//                .permitAll();
+                .antMatchers("/app/**").access("hasRole('ADMIN')")
+                .antMatchers("/**").permitAll()
+                .anyRequest().authenticated()
+                .and()
+                .formLogin()
+                .loginPage("/login")
+                .failureUrl("/login-error")
+                .defaultSuccessUrl("/app/app-main")
+                .permitAll()
+                .and()
+                .logout()
+                .logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
+                .logoutSuccessUrl("/")
+                .permitAll();
 
-                .
 
-        http.csrf().disable();
+
+
+//        http.csrf().disable();
         http.headers().frameOptions().disable();
     }
 
     @Autowired
     public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
+
+        User.UserBuilder users = User.withDefaultPasswordEncoder();
+
         auth
                 .inMemoryAuthentication()
-                .withUser("admin").password("admin").roles("ADMIN");
+                .withUser(users.username("admin").password("admin").roles("ADMIN"));
     }
 }

@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <meta charset="UTF-8">
@@ -9,16 +9,18 @@
     <link rel="shortcut icon" type="image/png" href="../../static/img/favicon.ico">
     <link rel="shortcut icon" type="image/png" th:href="@{img/favicon.ico}">
 
-    <link rel="stylesheet" type="text/css" href="../../static/node_modules/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="../static/node_modules/bootstrap/dist/css/bootstrap.css" />
+
 
     <link rel="stylesheet" type="text/css" th:href="@{/node_modules/bootstrap/dist/css/bootstrap.min.css}" />
 </head>
 
 <body>
-
+<div class="container-fluid">
+    <!-- <div class="row">
     <h1>Login page</h1>
     <p th:if="${loginError}" class="is-invalid">Wrong user or password</p>
-    <form th:action="@{/app/app-main}" method="post">
+    <form th:action="@{/login}" method="post">
         <label for="username">Username</label>:
         <input type="text" id="username" name="username" autofocus="autofocus" />
         <br />
@@ -26,8 +28,64 @@
         <input type="password" id="password" name="password" />
         <br />
         <input type="submit" value="Log in" />
-    </form>
+    </form> -->
 
+
+    <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-6">
+                <h2>Logowanie</h2>
+                <div class="col-md">
+                        <div class="form-control-feedback">
+                            <span class="text-danger align-middle">
+                                    <p th:if="${loginError}" class="is-invalid">Zła nazwa użytkownika lub hasło</p>    
+                            </span>
+                        </div>
+                    </div>
+                <hr>
+            </div>
+        </div>
+    <form th:action="@{/login}" method="post">
+        <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-6">
+                <div class="form-group has-danger">
+                    <label class="sr-only sr-only-focusable" for="username">E-Mail Address</label>
+                    <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                        <div class="input-group-addon"><i class="fa fa-at"></i></div>
+                        <input type="text" class="form-control" id="username" name="username"
+                               placeholder="Nazwa użytkownika" required autofocus="autofocus">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label class="sr-only" for="password">Password</label>
+                    <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                        <div class="input-group-addon"><i class="fa fa-key"></i></div>
+                        <input type="password" name="password" class="form-control" id="password"
+                               placeholder="Hasło" required>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col-md-3"></div>
+
+        </div>
+        <div class="row" style="padding-top: 1rem">
+            <div class="col-md-3"></div>
+            <div class="col-md-6">
+                <input type="submit" class="btn btn-success" value="Zaloguj"/>
+            </div>
+        </div>
+    <!-- </div> -->
+    </form>
+</div>
 
 
 

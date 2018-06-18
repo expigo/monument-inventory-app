@@ -14,6 +14,9 @@ import javax.validation.constraints.Size;
 @Getter
 @Setter
 @NoArgsConstructor
+/**
+ *  DTO
+ */
 public class AddressCommand {
 
     @NotNull

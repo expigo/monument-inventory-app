@@ -121,7 +121,7 @@
                                         <div class="form-row">
                                             <div class="col-md-4 form-group">
                                                 <label for="zip">Kod pocztowy</label>
-                                                <input type="text" class="form-control" placeholder="Kod pocztowy" id="zip" th:field="*{address.city.zipcode}" th:errorclass="is-invalid" required>
+                                                <input type="text" class="form-control" placeholder="Kod pocztowy" id="zip" th:field="*{address.city.zipcode}" th:errorclass="is-invalid" >
                                                 <div class="invalid-feedback">
                                                     <ul th:if="${#fields.hasErrors('address.city.zipcode')}">
                                                         <li th:each="err : ${#fields.errors('address.city.zipcode')}" th:text="${err}">Input is incorrect</li>

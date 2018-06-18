@@ -54,10 +54,10 @@
                 <div class="app-monument-view__information">
                     <div class="app-monument-view__information--images">
 
-                        <img src="&nbsp;" alt="Zdjecie" th:src="@{'/app/' + ${monument.id} + '/img'}"
+                        <img alt="Zdjęcie" th:src="@{'/app/' + ${monument.id} + '/img'}" src="../../static/img/mochaGrunge_@2X.png"
                              class="app-monument-view__information--img">
 
-                        <a href="#" th:href="@{'/app/'+ ${monument.id}+'/image'}" class="btn btn-primary" role="button">Zmien zdjecie</a>
+                        <a href="#" th:href="@{'/app/'+ ${monument.id}+'/image'}" class="btn btn-primary" role="button">Zmień zdjęcie</a>
                         <a href="#" th:href="@{'/app/' + ${monument.id} + '/update'}" class="btn btn-primary">Edytuj</a>
                     </div>
                     <div class="app-monument-view__information--container">

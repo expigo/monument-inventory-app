@@ -5,6 +5,7 @@ import com.kryspinmusiol.monumentinventoryapp.repository.MonumentRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationListener;
+import org.springframework.context.annotation.Profile;
 import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
@@ -14,6 +15,7 @@ import java.util.List;
 
 @Slf4j
 @Component
+@Profile("default")
 public class MonumentBootstrap implements ApplicationListener<ContextRefreshedEvent>{
 
     private static final Accessibility MONUMENT_ACCESSIBILITY= Accessibility.PERMITTED;
@@ -52,7 +54,6 @@ public class MonumentBootstrap implements ApplicationListener<ContextRefreshedEv
         city.setAdministrativeArea(administrativeArea);
         city.setName("Gliwice");
         city.setZipcode("44-100");
-
 
 
 

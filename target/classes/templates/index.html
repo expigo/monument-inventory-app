@@ -64,6 +64,7 @@
             </ul>
         </nav>
     </div>
+
     <header class="header">
         <div class="header__logo--box">
             <!--<img src="../static/img/logo.png" alt="Logo" class="header__logo">-->
@@ -81,8 +82,7 @@
             </a>
         </div>
     </header>
-
-    <main>
+    <main class="main">
         <section class="section-about">
             <div class="u-center-text u-margin-bottom-large">
                 <h2 class="heading-secondary heading-secondary--dark">
@@ -201,7 +201,7 @@
                             </h4>
                             <div class="card__details">
                                 <ul>
-                                    <li>wybudowana w latach 1934–36</li>
+                                    <li>wybudowana w latach <br>1934–1936</li>
                                     <li>Wysokość 118m</li>
                                     <li>Wpisany na listę Pomników Historii</li>
                                 </ul>
@@ -325,7 +325,7 @@
         <div class="popup__content">
             <div class="popup__head ">
                 <a href="#section-cards" class="popup__close">&times;</a>
-                <h2 class="heading-secondary">Ratusz Miejski</h2>
+                <h2 class="heading-secondary heading-secondary--dark">Ratusz Miejski</h2>
             </div>
             <div class="popup__table">
             <div class="popup__left">
@@ -357,7 +357,7 @@
         <div class="popup__content">
             <div class="popup__head ">
                 <a href="#section-cards" class="popup__close">&times;</a>
-                <h2 class="heading-secondary">Radiostacja</h2>
+                <h2 class="heading-secondary heading-secondary--dark">Radiostacja</h2>
             </div>
             <div class="popup__table">
             <div class="popup__left">
@@ -384,7 +384,7 @@
         <div class="popup__content">
             <div class="popup__head ">
                 <a href="#section-cards" class="popup__close">&times;</a>
-                <h2 class="heading-secondary">Willa Caro</h2>
+                <h2 class="heading-secondary heading-secondary--dark">Willa Caro</h2>
             </div>
             <div class="popup__table">
             <div class="popup__left">
@@ -396,13 +396,13 @@
                 </p>
             </div>
             <div class="popup__right">
-                <img src="/static/img/willa_caro-large.jpg"
-                    srcset="/static/img/willa_caro.jpg 500w, /static/img/willa_caro-large.jpg 1800w"
-                    sizes="(max-width: 75em) 25vw, (max-width: 56.25em) 55vw, (max-width: 37.5em) 36vw"   
-                    alt="Willa Caro"
-                    class="popup__image">
+                <!--<img src="/static/img/willa_caro-large.jpg"-->
+                    <!--srcset="/static/img/willa_caro.jpg 500w, /static/img/willa_caro-large.jpg 1800w"-->
+                    <!--sizes="(max-width: 75em) 25vw, (max-width: 56.25em) 55vw, (max-width: 37.5em) 36vw"   -->
+                    <!--alt="Willa Caro"-->
+                    <!--class="popup__image">-->
                 <!-- <img src="/static/img/ratusz.jpg" alt="Ratusz" class="popup__image"> -->
-                 <img th:src="@{img/ratusz.jpg}" alt="Willa Caro" class="popup__image">
+                 <img th:src="@{img/willa_caro-large.jpg}" alt="Willa Caro" class="popup__image">
 
                 <div class="popup__map" id="map--willa-caro">
                 </div>
@@ -411,79 +411,79 @@
     </div>
     </div>
 
-    
-    
-        <!-- 
-    <section class="grid-test">
-        <div class="row">
-            <div class="col-1-of-2">
-                Column 1 of 2
-            </div>
-            <div class="col-1-of-2">
-                Column 1 of 2
-            </div>
-        </div>
+    <!---->
+    <!---->
 
-        <div class="row">
-            <div class="col-1-of-3">
-                Column 1 of3
-            </div>
-            <div class="col-1-of-3">
-                Column 1 of 3
-            </div>
-            <div class="col-1-of-3">
-                Column 1 of 3
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-1-of-3">
-                Column 1 of 3
-            </div>
-            <div class="col-2-of-3">
-                Column 2 of 3
-            </div>
+    <!--<section class="grid-test">-->
+        <!--<div class="row">-->
+            <!--<div class="col-1-of-2">-->
+                <!--Column 1 of 2-->
+            <!--</div>-->
+            <!--<div class="col-1-of-2">-->
+                <!--Column 1 of 2-->
+            <!--</div>-->
+        <!--</div>-->
 
-        </div>
+        <!--<div class="row">-->
+            <!--<div class="col-1-of-3">-->
+                <!--Column 1 of3-->
+            <!--</div>-->
+            <!--<div class="col-1-of-3">-->
+                <!--Column 1 of 3-->
+            <!--</div>-->
+            <!--<div class="col-1-of-3">-->
+                <!--Column 1 of 3-->
+            <!--</div>-->
+        <!--</div>-->
+        <!--<div class="row">-->
+            <!--<div class="col-1-of-3">-->
+                <!--Column 1 of 3-->
+            <!--</div>-->
+            <!--<div class="col-2-of-3">-->
+                <!--Column 2 of 3-->
+            <!--</div>-->
 
-        <div class="row">
-            <div class="col-1-of-4">
-                Column 1 of 4
-            </div>
-            <div class="col-1-of-4">
-                Column 1 of 4
-            </div>
-            <div class="col-1-of-4">
-                Column 1 of 4
-            </div>
-            <div class="col-1-of-4">
-                Column 1 of 4
-            </div>
-        </div>
+        <!--</div>-->
 
-        <div class="row">
-            <div class="col-1-of-4">
-                Column 1 of 4
-            </div>
-            <div class="col-1-of-4">
-                Column 1 of 4
-            </div>
-            <div class="col-2-of-4">
-                Column 2 of 4
-            </div>
-        </div> 
+        <!--<div class="row">-->
+            <!--<div class="col-1-of-4">-->
+                <!--Column 1 of 4-->
+            <!--</div>-->
+            <!--<div class="col-1-of-4">-->
+                <!--Column 1 of 4-->
+            <!--</div>-->
+            <!--<div class="col-1-of-4">-->
+                <!--Column 1 of 4-->
+            <!--</div>-->
+            <!--<div class="col-1-of-4">-->
+                <!--Column 1 of 4-->
+            <!--</div>-->
+        <!--</div>-->
 
-        <div class="row">
-                <div class="col-1-of-4">
-                    Column 1 of 4
-                </div>
-                <div class="col-3-of-4">
-                    Column 3 of 4
-                </div>
+        <!--<div class="row">-->
+            <!--<div class="col-1-of-4">-->
+                <!--Column 1 of 4-->
+            <!--</div>-->
+            <!--<div class="col-1-of-4">-->
+                <!--Column 1 of 4-->
+            <!--</div>-->
+            <!--<div class="col-2-of-4">-->
+                <!--Column 2 of 4-->
+            <!--</div>-->
+        <!--</div>-->
 
-            </div>
-    </section> -->
+        <!--<div class="row">-->
+                <!--<div class="col-1-of-4">-->
+                    <!--Column 1 of 4-->
+                <!--</div>-->
+                <!--<div class="col-3-of-4">-->
+                    <!--Column 3 of 4-->
+                <!--</div>-->
 
-</body>
+            <!--</div>-->
+    <!--</section>-->
+
+<!--</body>-->
 
 
 
@@ -493,12 +493,14 @@
 
 <script type="text/javascript" src="https://cdn.datatables.net/v/bs4-4.0.0/jq-3.2.1/dt-1.10.16/fh-3.1.3/r-2.2.1/datatables.min.js"></script>
 
+<script src="../static/js/script.js"></script>
+<script th:src="@{js/script.js}"></script>
+
 <script async defer
 src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB3Kvmn-YZP1MZhw3Eb1cSnv7bGDz_g8GQ&callback=initMap">
 </script>
 
     
-<script src="../static/js/script.js"></script>
-<script th:src="@{js/script.js}"></script>
+
 
 </html>
